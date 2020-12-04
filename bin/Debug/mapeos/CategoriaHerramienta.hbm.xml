@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CategoriaHerramienta" table="CategoriaHerramienta" lazy="true" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="nombre">
+      <column name="nombre" not-null="true" length="30" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="visible">
+      <column name="visible" not-null="true" sql-type="bit"/>
+    </property>
+    <bag name="contenedor" inverse="true">
+      <key column="categoriaHerramienta_ID" />
+      <one-to-many class="Contenedor" />
+    </bag>
+  </class>
+</hibernate-mapping>

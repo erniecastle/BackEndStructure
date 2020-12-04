@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="IngresosBajas" table="IngresosBajas" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="fechaBaja" type="DateTime">
+      <column name="fechaBaja" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaIngreso" type="DateTime">
+      <column name="fechaIngreso" not-null="true" sql-type="DATETIME" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="plazasPorEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="ingresosBajas_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleado" />
+    </bag>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="registroPatronal" class="RegistroPatronal">
+      <column name="registroPatronal_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <property name="aplicar" type="Boolean">
+      <column name="aplicar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="causaBaja" type="Int32">
+      <column name="causaBaja" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoSeparacion" type="String">
+      <column name="tipoSeparacion" not-null="true" length="10" sql-type="VARCHAR(10)" />
+    </property>
+    <property name="fechaCalculo" type="DateTime">
+      <column name="fechaCalculo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="calculado" type="Boolean">
+      <column name="calculado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="complementaria" type="Boolean">
+      <column name="complementaria" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="fechaComplementaria" type="DateTime">
+      <column name="fechaComplementaria" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="previa" type="Boolean">
+      <column name="previa" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="procesado" type="Boolean">
+      <column name="procesado" not-null="true" sql-type="BIT" />
+    </property>
+  </class>
+</hibernate-mapping>

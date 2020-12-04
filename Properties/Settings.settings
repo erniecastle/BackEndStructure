@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Exitosw.Payroll.Core.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Exitosw_Payroll_Core_WsSolocionFactibleTest_Timbrado" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://testing.solucionfactible.com/ws/services/Timbrado.TimbradoHttpsSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="Exitosw_Payroll_Core_WsSolucionfactibleCancelar_Cancelacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://solucionfactible.com/ws/services/Cancelacion.CancelacionHttpsSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="Exitosw_Payroll_Core_WsSolucionfactible_Timbrado" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://solucionfactible.com/ws/services/Timbrado.TimbradoHttpsSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="Exitosw_Payroll_Core_WebConsultarSat_ConsultaCFDIService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CalculoIMSS" table="CalculoIMSS" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="diasCotizados" type="Double">
+      <column name="diasCotizados" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorCesantiaVejez" type="Double">
+      <column name="valorCesantiaVejez" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorDineEnfermeMater" type="Double">
+      <column name="valorDineEnfermeMater" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorEspecieEnfermeMater" type="Double">
+      <column name="valorEspecieEnfermeMater" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorGastosPension" type="Double">
+      <column name="valorGastosPension" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorInvalidezVida" type="Double">
+      <column name="valorInvalidezVida" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="configuracionIMSS" class="ConfiguracionIMSS">
+      <column name="configuracionIMSS_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="movNomConcep" class="MovNomConcep">
+      <column name="movNomConcep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

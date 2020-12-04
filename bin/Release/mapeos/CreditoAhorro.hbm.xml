@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2" >
+  <class name="CreditoAhorro" table="CreditoAhorro" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="activarManejoDescuento" type="Boolean">
+      <column name="activarManejoDescuento" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="asignaAutoNumCredAho" type="Boolean">
+      <column name="asignaAutoNumCredAho" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="conceptoDcto" type="String">
+      <column name="conceptoDcto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="corteMesDia" type="DateTime">
+      <column name="corteMesDia" not-null="true" sql-type="DATETIME" />
+    </property>
+    <property name="cuandoDescontar" type="Int32">
+      <column name="cuandoDescontar" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="cuotaFija" type="Boolean">
+      <column name="cuotaFija" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="definirNumEmp" type="Boolean">
+      <column name="definirNumEmp" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descPropDiasPer" type="Boolean">
+      <column name="descPropDiasPer" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionAbrev" type="String">
+      <column name="descripcionAbrev" not-null="true" length="50" sql-type="VARCHAR(50)" />
+    </property>
+    <property name="factorProporcional" type="Byte">
+      <column name="factorProporcional" not-null="false" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="fondoAhorro" type="Boolean">
+      <column name="fondoAhorro" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="importeDescuento" type="Double">
+      <column name="importeDescuento" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="inicioDescuento" type="Boolean">
+      <column name="inicioDescuento" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="longitudNumCredAho" type="String">
+      <column name="longitudNumCredAho" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="longitudNumEmp" type="String">
+      <column name="longitudNumEmp" not-null="false" length="3" sql-type="VARCHAR(3)" />
+    </property>
+    <property name="mascaraNumCredAho" type="String">
+      <column name="mascaraNumCredAho" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="modoAgregarCredAhoIngEmp" type="Byte">
+      <column name="modoAgregarCredAhoIngEmp" not-null="true" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="modoCapturaDescuento" type="Int32">
+      <column name="modoCapturaDescuento" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="modoCapturaDescuentoPorc" type="Int32">
+      <column name="modoCapturaDescuentoPorc" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="modoCapturaDescuentoVSMG" type="Int32">
+      <column name="modoCapturaDescuentoVSMG" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+       <property name="capturarCreditoTotal" type="Boolean">
+      <column name="capturarCreditoTotal" not-null="false" precision="10" scale="0" sql-type="BIT" />
+    </property>
+    <property name="modoDescontarCredAhoFini" type="Byte">
+      <column name="modoDescontarCredAhoFini" not-null="true" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="modoDescontarCredAhoLiqu" type="Byte">
+      <column name="modoDescontarCredAhoLiqu" not-null="true" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="modoDescuento" type="Byte">
+      <column name="modoDescuento" not-null="true" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="modoManejoDescuento" type="Byte">
+      <column name="modoManejoDescuento" not-null="false" precision="3" scale="0" sql-type="TINYINT" />
+    </property>
+    <property name="numDecimalesDescuento" type="Int32">
+      <column name="numDecimalesDescuento" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="numDecimalesDescuentoPorc" type="Int32">
+      <column name="numDecimalesDescuentoPorc" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="numDecimalesDescuentoVSMG" type="Int32">
+      <column name="numDecimalesDescuentoVSMG" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="periodicidadDescuento" type="Int32">
+      <column name="periodicidadDescuento" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="porcentaje" type="Boolean">
+      <column name="porcentaje" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="solicitarFecVen" type="Boolean">
+      <column name="solicitarFecVen" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tasaIntMens" type="String">
+      <column name="tasaIntMens" not-null="false" length="10" sql-type="VARCHAR(10)" />
+    </property>
+    <property name="tipoConfiguracion" type="String">
+      <column name="tipoConfiguracion" not-null="true" length="1" sql-type="VARCHAR(1)" />
+    </property>
+    <property name="vsmg" type="Boolean">
+      <column name="vsmg" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="versionCalculoPrestamoAhorro" type="Int32">
+      <column name="versionCalculoPrestamoAhorro" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="valorVSMG" type="Int32">
+      <column name="valorVSMG" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="concepNomDefi_cNDescuento_ID" class="ConcepNomDefi" lazy="false" >
+      <column name="cNDescuento_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="concepNomDefi_cNDInteresMensual_ID" class="ConcepNomDefi" lazy="false" >
+      <column name="cNDInteresMensual_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="concepNomDefi_concepNomiDefin_ID" class="ConcepNomDefi" lazy="false">
+      <column name="concepNomiDefin_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales" >
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="creditoPorEmpleado" inverse="true" generic="true" >
+      <key>
+        <column name="creditoAhorro_ID" />
+      </key>
+      <one-to-many class="CreditoPorEmpleado" />
+    </bag>
+  </class>
+</hibernate-mapping>

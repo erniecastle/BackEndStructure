@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BancosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Bancos.</comment>
+  </data>
+  <data name="BancosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="BancosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BancosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="BancosRFC" xml:space="preserve">
+    <value>UUU-######-AAA</value>
+    <comment>Configuracion de Mascara para RFC Bancos</comment>
+  </data>
+  <data name="BancosRFCCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="BancosRFCDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BancosRFCTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CampoDIMClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Campos dim.</comment>
+  </data>
+  <data name="caracterAutoCompletado" xml:space="preserve">
+    <value>0</value>
+    <comment>es el valor con el que autocompletara la mascara</comment>
+  </data>
+  <data name="CaracterAutoCompletar" xml:space="preserve">
+    <value>0</value>
+    <comment>Default: es un cero</comment>
+  </data>
+  <data name="CategoriasPuestosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Categorias Puestos</comment>
+  </data>
+  <data name="CategoriasPuestosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CategoriasPuestosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CategoriasPuestosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CentroDeCostoClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Centro de Costos.</comment>
+  </data>
+  <data name="CentroDeCostoClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CentroDeCostoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CentroDeCostoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CiudadesClave" xml:space="preserve">
+    <value>####</value>
+    <comment>Configuracion de Mascara globales Ciudades</comment>
+  </data>
+  <data name="CiudadesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CiudadesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CiudadesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ConcepNomDefiClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Concepto De Nomina Definicion.</comment>
+  </data>
+  <data name="ConcepNomDefiClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ConcepNomDefiClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ConcepNomDefiClaveTipoMascara" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CpClave" xml:space="preserve">
+    <value>#####</value>
+    <comment>No cambiar esta mascara ya que afectariamos el envio al sat.
+Configuracion de Mascara Cp clave, el sat lo exige de 5 caracteres.</comment>
+  </data>
+  <data name="CpClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CpClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CpClavePermitirModificarMascara" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CpClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CreditoAhorroClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Creditos y Ahorros</comment>
+  </data>
+  <data name="CreditoAhorroClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CruceClaveElemento" xml:space="preserve">
+    <value>######</value>
+    <comment>Configuracion de Mascara para tabla cruces.</comment>
+  </data>
+  <data name="CruceClaveElementoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CruceClaveElementoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CruceClaveElementoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CuentasContablesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CuentasContablesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CuentasContablesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="DepartamentosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para catalogo Departamentos.</comment>
+  </data>
+  <data name="DepartamentosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="DepartamentosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DepartamentosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ElementosAplicacionClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para catalogo elementos aplicacion
+.Configuracion No cambiar esta mascara ya que afectariamos el calculo de la nomina,
+si se requiere hacer el cambio, afectar la clase ClavesParametrosModulos del compilador</comment>
+  </data>
+  <data name="ElementosAplicacionClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ElementosAplicacionClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ElementosAplicacionClavePermitirModificarMascara" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ElementosAplicacionClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EmpleadosClave" xml:space="preserve">
+    <value>#####</value>
+    <comment>Configuracion de Mascara para Empleados</comment>
+  </data>
+  <data name="EmpleadosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EmpleadosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EmpleadosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EmpleadosCURP" xml:space="preserve">
+    <value>UUUU-######-UUUUUUA#</value>
+    <comment>Configuracion de Mascara para CURP Empleado son 18 caracteres</comment>
+  </data>
+  <data name="EmpleadosCURPCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EmpleadosCURPDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EmpleadosCURPTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EmpleadosRFC" xml:space="preserve">
+    <value>UUUU-######-AAA</value>
+    <comment>Configuracion de Mascara para RFC EMPLEADO</comment>
+  </data>
+  <data name="EmpleadosRFCCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EmpleadosRFCDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EmpleadosRFCTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EstadosClave" xml:space="preserve">
+    <value>AAA</value>
+    <comment>Configuracion de Mascara globales Estados.</comment>
+  </data>
+  <data name="EstadosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EstadosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EstadosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="FiniquitosLiquidacionesClave" xml:space="preserve">
+    <value>######</value>
+    <comment>Configuracion de Mascara globales Finiquitos y Liquidaciones.</comment>
+  </data>
+  <data name="FiniquitosLiquidacionesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="FiniquitosLiquidacionesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FiniquitosLiquidacionesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="FormatoCnxContaClave" xml:space="preserve">
+    <value>####</value>
+    <comment>Configuracion de mascara Formato conexion contable</comment>
+  </data>
+  <data name="FormatoCnxContaClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="FormatoCnxContaClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FormatoCnxContaClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="GrupoClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara globales Grupos.</comment>
+  </data>
+  <data name="GrupoClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="GrupoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GrupoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="HorarioClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Horario.</comment>
+  </data>
+  <data name="HorarioClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="HorarioClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="HorarioClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="HorarioHoraEntrada" xml:space="preserve">
+    <value>hh:mm a</value>
+    <comment>Configuracion de Mascara globales Horario</comment>
+  </data>
+  <data name="HorarioHoraEntradaCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="HorarioHoraEntradaDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="HorarioHoraEntradaTipoMascara" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="HorarioHoraSalida" xml:space="preserve">
+    <value>hh:mm a</value>
+    <comment>Configuracion de Mascara globales Horario</comment>
+  </data>
+  <data name="HorarioHoraSalidaCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="HorarioHoraSalidaDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="HorarioHoraSalidaTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="mascarasBaseDatos" xml:space="preserve">
+    <value>1</value>
+    <comment>Para saber si se va a obtener la configuracion de la BDD, Valores: 
+ 0=Si (obtiene valores de base de datos)
+ 1=No (obtiene valores de properties)</comment>
+  </data>
+  <data name="ModuloClave" xml:space="preserve">
+    <value>#</value>
+    <comment>Configuracion de Mascara para Modulos.</comment>
+  </data>
+  <data name="ModuloClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ModuloClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ModuloClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="MonedasClave" xml:space="preserve">
+    <value>#</value>
+    <comment>Configuracion de Mascara para Monedas.</comment>
+  </data>
+  <data name="MonedasClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="MonedasClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MonedasClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="MunicipiosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Municipios.</comment>
+  </data>
+  <data name="MunicipiosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="MunicipiosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MunicipiosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="NivelesClasificacionClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para Niveles Clasificacion</comment>
+  </data>
+  <data name="NivelesClasificacionClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="NivelesClasificacionClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NivelesClasificacionClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PaisesClave" xml:space="preserve">
+    <value>AAA</value>
+    <comment>Configuracion de Mascara globales Paises</comment>
+  </data>
+  <data name="PaisesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PaisesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PaisesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PerfilesClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para Perfiles</comment>
+  </data>
+  <data name="PerfilesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PerfilesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PerfilesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PeriodicidadClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para Periodicidad</comment>
+  </data>
+  <data name="PeriodicidadClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PeriodicidadClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PeriodicidadClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PeriodosNominaClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Periodos de nomina</comment>
+  </data>
+  <data name="PeriodosNominaClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PeriodosNominaClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PeriodosNominaClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PlazasClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para Posicion organigrama</comment>
+  </data>
+  <data name="PlazasClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PlazasClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PlazasClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PlazasPorEmpleadoClave" xml:space="preserve">
+    <value>###############</value>
+    <comment>Configuracion de Mascara para NuevasPlazasYReingresos</comment>
+  </data>
+  <data name="PlazasPorEmpleadoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PlazasPorEmpleadoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CreditoAhorroClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CreditoAhorroClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TipoCorridaClave" xml:space="preserve">
+    <value>AAA</value>
+    <comment>Configuracion de Mascara para Tipo Corrida</comment>
+  </data>
+  <data name="TipoCorridaClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TipoCorridaClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TipoCorridaClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CentroDeCostoTelefono" xml:space="preserve">
+    <value>(###)###-####</value>
+    <comment>Configuracion de Mascara para Telefono</comment>
+  </data>
+  <data name="CentroDeCostoTelefonoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CentroDeCostoTelefonoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CentroDeCostoTelefonoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ContactosTelefono" xml:space="preserve">
+    <value>(###)###-####</value>
+    <comment>Configuracion de Mascara para Telefono</comment>
+  </data>
+  <data name="ContactosTelefonoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ContactosTelefonoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ContactosTelefonoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PuestosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Puestos</comment>
+  </data>
+  <data name="PuestosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="PuestosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PuestosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RazonesSocialesClave" xml:space="preserve">
+    <value>####</value>
+    <comment>Configuracion de Mascara globales Razon social</comment>
+  </data>
+  <data name="RazonesSocialesClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RazonesSocialesClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RazonesSocialesClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RazonesSocialesRfc" xml:space="preserve">
+    <value>UUU-######-AAA</value>
+    <comment>Configuracion de Mascara para RFC EMPRESA</comment>
+  </data>
+  <data name="RazonesSocialesRfcCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RazonesSocialesRfcDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RazonesSocialesRfcTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RazonesSocialesTelefono" xml:space="preserve">
+    <value>(###)###-####</value>
+    <comment>Configuracion de Mascara para Telefono EMPRESA</comment>
+  </data>
+  <data name="RazonesSocialesTelefonoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RazonesSocialesTelefonoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RazonesSocialesTelefonoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RegistroIncapacidadClave" xml:space="preserve">
+    <value>#####</value>
+    <comment>Configuracion de Mascara para Registro Incapacidad.</comment>
+  </data>
+  <data name="RegistroIncapacidadClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RegistroIncapacidadClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RegistroIncapacidadClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RegistroPatronalClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara globales Registro Patronal</comment>
+  </data>
+  <data name="RegistroPatronalClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RegistroPatronalClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RegistroPatronalClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RegistroPatronalRegistroPatronal" xml:space="preserve">
+    <value>AAA ## ### ## #</value>
+  </data>
+  <data name="RegistroPatronalRegistroPatronalCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RegistroPatronalRegistroPatronalDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RegistroPatronalRegistroPatronalTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="RegistroPatronalTelefono" xml:space="preserve">
+    <value>(###)###-####</value>
+    <comment>Configuracion de Mascara para Telefono</comment>
+  </data>
+  <data name="RegistroPatronalTelefonoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="RegistroPatronalTelefonoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RegistroPatronalTelefonoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="SistemasClave" xml:space="preserve">
+    <value>#</value>
+    <comment>Configuracion de Mascara globales Sistemas.</comment>
+  </data>
+  <data name="SistemasClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="SistemasClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SistemasClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TipoCentroCostosClave" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="TipoCentroCostosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TipoCentroCostosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TipoCentroCostosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TipoDeRedondeoClave" xml:space="preserve">
+    <value>##</value>
+    <comment>Configuracion de Mascara para Tipo De Redondeo</comment>
+  </data>
+  <data name="TipoDeRedondeoClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TipoDeRedondeoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TipoDeRedondeoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TipoNominaClave" xml:space="preserve">
+    <value>AAAA</value>
+    <comment>Configuracion de Mascara para Tipo Nomina.</comment>
+  </data>
+  <data name="TipoNominaClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TipoNominaClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TipoNominaClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TurnosClave" xml:space="preserve">
+    <value>###</value>
+    <comment>Configuracion de Mascara para Turnos.</comment>
+  </data>
+  <data name="TurnosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TurnosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TurnosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="BaseNominaClave" xml:space="preserve">
+    <value>##</value>
+    <comment>BaseNomina No cambiar esta mascara ya que afectariamos el calculo de la nomina,
+si se requiere hacer el cambio, afectar la clase ClavesParametrosModulos del compilador</comment>
+  </data>
+  <data name="BaseNominaClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="BaseNominaClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BaseNominaClavePermitirModificarMascara" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BaseNominaClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="CursosClave" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="CursosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="CursosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CursosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EmpleadosTelefono" xml:space="preserve">
+    <value>(###)###-####</value>
+    <comment>Configuracion de Mascara para Telefono</comment>
+  </data>
+  <data name="EmpleadosTelefonoCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EmpleadosTelefonoDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EmpleadosTelefonoTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="EstudiosClave" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="EstudiosClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EstudiosClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EstudiosClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="FirmasClave" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="FirmasClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="FirmasClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FirmasClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ImportaCamposClave" xml:space="preserve">
+    <value>###</value>
+    <comment>ImportaCampos</comment>
+  </data>
+  <data name="ImportaCamposClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ImportaCamposClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ImportaCamposClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ParentescoClave" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="ParentescoClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ParentescoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ParentescoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ReporteDinamicoClave" xml:space="preserve">
+    <value>####</value>
+    <comment>ReporteDinamico</comment>
+  </data>
+  <data name="ReporteDinamicoClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="ReporteDinamicoClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ReporteDinamicoClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="TablaBaseClave" xml:space="preserve">
+    <value>##</value>
+    <comment>TablaBase No cambiar esta mascara ya que afectariamos el calculo de la nomina,si se requiere hacer el cambio, afectar la clase ClavesParametrosModulos del compilador</comment>
+  </data>
+  <data name="TablaBaseClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="TablaBaseClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TablaBaseClavePermitirModificarMascara" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TablaBaseClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="UsuarioClave" xml:space="preserve">
+    <value>####</value>
+    <comment>Configuracion de Mascara para usuarios</comment>
+  </data>
+  <data name="UsuarioClaveCaracterMarcador" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="UsuarioClaveDefinirCaracterMarcador" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UsuarioClaveTipoMascara" xml:space="preserve">
+    <value>M</value>
+  </data>
+</root>

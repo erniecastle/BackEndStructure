@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CFDIReciboConcepto" table="CFDIReciboConcepto" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="claveConcepto" type="String">
+      <column name="claveConcepto" not-null="true" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="claveSAT" type="String">
+      <column name="claveSAT" not-null="true" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="descripcionConcepto" type="String">
+      <column name="descripcionConcepto" not-null="true" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="importeExento" type="Double">
+      <column name="importeExento" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="importeGravable" type="Double">
+      <column name="importeGravable" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="otroPago" type="Boolean">
+      <column name="otroPago" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tipoNaturaleza" type="String">
+      <column name="tipoNaturaleza" not-null="false" sql-type="VARCHAR(MAX)" />
+    </property>
+    <many-to-one name="cfdiRecibo" class="CFDIRecibo">
+      <column name="cfdiRecibo_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

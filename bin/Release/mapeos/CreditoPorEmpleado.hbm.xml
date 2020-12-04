@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CreditoPorEmpleado" table="CreditoPorEmpleado" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="cuentaContable" type="String">
+      <column name="cuentaContable" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fechaAutorizacion" type="DateTime">
+      <column name="fechaAutorizacion" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaCredito" type="DateTime">
+      <column name="fechaCredito" not-null="true" sql-type="DATETIME" />
+    </property>
+    <property name="fechaVence" type="DateTime">
+      <column name="fechaVence" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="inicioDescuento" type="DateTime">
+      <column name="inicioDescuento" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="modoDescuentoCredito" type="Int32">
+      <column name="modoDescuentoCredito" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="montoDescuento" type="Double">
+      <column name="montoDescuento" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="numeroCredito" type="String">
+      <column name="numeroCredito" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="numeroEmpleadoExtra" type="String">
+      <column name="numeroEmpleadoExtra" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroParcialidades" type="Int32">
+      <column name="numeroParcialidades" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="totalCredito" type="Double">
+      <column name="totalCredito" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="creditoAhorro" class="CreditoAhorro">
+      <column name="creditoAhorro_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina" class="PeriodosNomina">
+      <column name="periodosNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="creditoMovimientos" inverse="true" generic="true">
+      <key>
+        <column name="creditoPorEmpleado_ID" />
+      </key>
+      <one-to-many class="CreditoMovimientos" />
+    </bag>
+    <property name="saldo"
+        formula="(select CASE WHEN (cr.tipoConfiguracion = '1') then (totalCredito + (select CASE WHEN (COUNT(*) = 0 ) THEN 0.0 ELSE (SUM(CASE WHEN (c.importe is null) then 0.0 ELSE c.importe END)) END FROM CreditoMovimientos c where c.creditoPorEmpleado_ID = id AND c.tiposMovimiento = 3)) - (select CASE WHEN (COUNT(*) = 0 ) THEN 0.0 ELSE (SUM(CASE WHEN (c.importe is null) then 0.0 ELSE c.importe END)) END FROM CreditoMovimientos c where c.creditoPorEmpleado_ID = id AND (c.tiposMovimiento = 1 or c.tiposMovimiento = 5)) else ((select CASE WHEN (COUNT(*) = 0 ) THEN 0.0 ELSE (SUM(CASE WHEN (c.importe is null) then 0.0 ELSE c.importe END)) END FROM CreditoMovimientos c where c.creditoPorEmpleado_ID = id AND (c.tiposMovimiento = 1 or c.tiposMovimiento = 5))) - (select CASE WHEN (COUNT(*) = 0 ) THEN 0.0 ELSE (SUM(CASE WHEN (c.importe is null) then 0.0 ELSE c.importe END)) END FROM CreditoMovimientos c where c.creditoPorEmpleado_ID = id AND c.tiposMovimiento = 3) end FROM CreditoPorEmpleado  c, CreditoAhorro cr where c.creditoAhorro_id=cr.id and c.id = id)"
+  type="Boolean"/>
+  </class>
+</hibernate-mapping>

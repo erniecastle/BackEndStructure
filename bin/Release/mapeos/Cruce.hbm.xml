@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Cruce" table="Cruce" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="claveElemento" type="String">
+      <column name="claveElemento" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="imagen" type="BinaryBlob">
+      <column name="imagen" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="ordenId" type="Int32">
+      <column name="ordenId" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="valor" type="String">
+      <column name="valor" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="elementosAplicacion" class="ElementosAplicacion">
+      <column name="elementosAplicacion_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="parametros" class="Parametros">
+      <column name="parametros_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

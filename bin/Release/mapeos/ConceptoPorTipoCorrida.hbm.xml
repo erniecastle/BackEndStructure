@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ConceptoPorTipoCorrida" table="ConceptoPorTipoCorrida" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="cantidad" type="Double">
+      <column name="cantidad" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="descuentoCreditos" type="Int32">
+      <column name="descuentoCreditos" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="incluir" type="Boolean">
+      <column name="incluir" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="modificarCantidad" type="Boolean">
+      <column name="modificarCantidad" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="modificarImporte" type="Boolean">
+      <column name="modificarImporte" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="mostrar" type="Boolean">
+      <column name="mostrar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="opcional" type="Boolean">
+      <column name="opcional" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="concepNomDefi" class="ConcepNomDefi">
+      <column name="concepNomDefi_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoCorrida" class="TipoCorrida">
+      <column name="tipoCorrida_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="finiqLiquidCncNom" inverse="true" generic="true">
+      <key>
+        <column name="conceptoPorTipoCorrida_ID" />
+      </key>
+      <one-to-many class="FiniqLiquidCncNom" />
+    </bag>
+  </class>
+</hibernate-mapping>

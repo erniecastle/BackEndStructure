@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="HerramientaPersonalizada" table="HerramientaPersonalizada" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="habilitado" type="Boolean">
+      <column name="habilitado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="visible" type="Boolean">
+      <column name="visible" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="usuario" class="Usuario">
+      <column name="usuario_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="perfiles" class="Perfiles">
+      <column name="perfil_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <bag name="contenedorPersonalizado" inverse="true">
+      <key column="herramientaPersonalizada_ID" />
+      <one-to-many class="ContenedorPersonalizado" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VacacionesDisfrutadas" table="VacacionesDisfrutadas" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="diasPrimaDisfrutados" type="Double">
+      <column name="diasPrimaDisfrutados" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasVacDisfrutados" type="Int32">
+      <column name="diasVacDisfrutados" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="ejercicioAplicacion" type="Int32">
+      <column name="ejercicioAplicacion" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="observaciones" type="String">
+      <column name="observaciones" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="pagarPrimaVacacional" type="Boolean">
+      <column name="pagarPrimaVacacional" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="pagarVacaciones" type="Boolean">
+      <column name="pagarVacaciones" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="registroInicial" type="Boolean">
+      <column name="registroInicial" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="regresoVac" type="DateTime">
+      <column name="regresoVac" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="salidaVacac" type="DateTime">
+      <column name="salidaVacac" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaPago" type="DateTime">
+      <column name="fechaPago" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="statusVacaciones" type="Int32">
+      <column name="statusVacaciones" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina_periodoAplicacion_ID" class="PeriodosNomina">
+      <column name="periodoAplicacion_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+   
+    <many-to-one name="periodosNomina_periodoPago_ID" class="PeriodosNomina">
+      <column name="periodoPago_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoCorridaAplicacion" class="TipoCorrida">
+      <column name="tipoCorridaAplicacion_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+     <many-to-one name="tipoCorridaPago" class="TipoCorrida">
+      <column name="tipoCorridaPago_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+      
+    <many-to-one name="tipoNominaAplicacion" class="TipoNomina">
+      <column name="tipoNominaAplicacion_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNominaPago" class="TipoNomina">
+      <column name="tipoNominaPago_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+      
+    <many-to-one name="tiposVacaciones" class="TiposVacaciones">
+      <column name="tiposVacaciones_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="vacacionesAplicacion" inverse="true" generic="true">
+      <key>
+        <column name="vacacionesDisfrutadas_ID" />
+      </key>
+      <one-to-many class="VacacionesAplicacion" />
+    </bag>
+  </class>
+</hibernate-mapping>

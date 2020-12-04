@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Contenedor" table="Contenedor">
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="assigned" />
+    </id>
+    <property name="accion" type="String">
+      <column name="accion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreIcono" type="String">
+      <column name="nombreIcono" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="habilitado" type="Boolean">
+      <column name="habilitado" not-null="true" sql-type="BIT" />
+    </property>
+    <!--<property name="icono" type="BinaryBlob">
+      <column name="icono" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>-->
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="ordenId" type="Int32">
+      <column name="ordenId" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoAcciones" type="Int32">
+      <column name="tipoAcciones" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoIcono" type="Int32">
+      <column name="tipoIcono" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="visible" type="Boolean">
+      <column name="visible" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="herramienta" class="Herramienta">
+      <column name="herramienta_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="ventana" class="Ventana">
+      <column name="ventana_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="razonSocial" class="RazonSocial">
+      <column name="razonSocial_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="tipoElemento" class="TipoElemento">
+      <column name="tipoElemento_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="categoriaHerramienta" class="CategoriaHerramienta">
+      <column name="categoriaHerramienta_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <bag name="contenedorPersonalizado" inverse="true" generic="true">
+      <key>
+        <column name="contenedor_ID" />
+      </key>
+      <one-to-many class="ContenedorPersonalizado" />
+    </bag>
+    <bag name="elementoExterno" inverse="true" generic="true">
+      <key>
+        <column name="contenedor_ID" />
+      </key>
+      <one-to-many class="ElementoExterno" />
+    </bag>
+    <bag name="externoPersonalizado" inverse="true" generic="true">
+      <key>
+        <column name="contenedor_ID" />
+      </key>
+      <one-to-many class="ExternoPersonalizado" />
+    </bag>
+    <bag name="parametrosConsulta" inverse="true" generic="true">
+      <key>
+        <column name="contenedorGrupo_ID" />
+      </key>
+      <one-to-many class="ParametrosConsulta" />
+    </bag>
+    <bag name="permisos" inverse="true" generic="true">
+      <key>
+        <column name="contenedor_ID" />
+      </key>
+      <one-to-many class="Permisos" />
+    </bag>
+    <bag name="reporteDinamico" inverse="true" generic="true">
+      <key>
+        <column name="contenedor_ID" />
+      </key>
+      <one-to-many class="ReporteDinamico" />
+    </bag>
+  </class>
+</hibernate-mapping>

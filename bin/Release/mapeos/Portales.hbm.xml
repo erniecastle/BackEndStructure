@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Portales" table="Portales" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String" >
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" unique="true" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="textoPrincipal" type="String">
+      <column name="textoPrincipal" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="url" type="String">
+      <column name="url" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="estado" type="Boolean">
+      <column name="estado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="postLogin" type="Int32">
+      <column name="postLogin" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="imgLogo" type="BinaryBlob">
+      <column name="imgLogo" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="imgFondo" type="BinaryBlob">
+      <column name="imgFondo" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="imgBanner" type="BinaryBlob">
+      <column name="imgBanner" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="isNombreCorpo" type="Boolean">
+      <column name="isNombreCorpo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="isBannerCorpo" type="Boolean">
+      <column name="isBannerCorpo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="textoBienvenida" type="String">
+      <column name="textoBienvenida" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="imgBannerLogo" type="Int32">
+      <column name="imgBannerLogo" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="colorFondo" type="String">
+      <column name="colorFondo" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colorFuente" type="String">
+      <column name="colorFuente" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colorExceEncabe" type="String">
+      <column name="colorExceEncabe" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colorExceTextoEncabe" type="String">
+      <column name="colorExceTextoEncabe" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colorExceGruposTot" type="String">
+      <column name="colorExceGruposTot" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+
+  <property name="configLoader" type="String">
+      <column name="configLoader" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <bag name="portalesServidoresBd" inverse="true" generic="true" cascade="all-delete-orphan">
+      <key>
+        <column name="portales_ID" />
+      </key>
+      <one-to-many class="PortalesServidoresBd" />
+    </bag>
+    <bag name="avisos" table="Portales_Avisos"  inverse="true" generic="true">
+      <key not-null="true">
+        <column name="portales_id" not-null="true" unique-key="portales_id,avisos_id" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </key>
+      <many-to-many class="Avisos">
+        <column name="avisos_id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

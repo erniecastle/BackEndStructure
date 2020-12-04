@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="DatosPlazasEmpleado" table="DatosPlazasEmpleado" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="apellidoMaterno" type="String">
+      <column name="apellidoMaterno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="apellidoPaterno" type="String">
+      <column name="apellidoPaterno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveEmpleado" type="String">
+      <column name="claveEmpleado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavePlaza" type="String">
+      <column name="clavePlaza" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavePlazaEmpleado" type="String">
+      <column name="clavePlazaEmpleado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionCentroCosto" type="String">
+      <column name="descripcionCentroCosto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionPuesto" type="String">
+      <column name="descripcionPuesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fechaFinUltReingreso" type="DateTime">
+      <column name="fechaFinUltReingreso" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaFinal" type="DateTime">
+      <column name="fechaFinal" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaIngreso" type="DateTime">
+      <column name="fechaIngreso" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaInicial" type="DateTime">
+      <column name="fechaInicial" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horas" type="Int32">
+      <column name="horas" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="importe" type="Double">
+      <column name="importe" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoNominaClave" type="String">
+      <column name="tipoNominaClave" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoNominaDescripcion" type="String">
+      <column name="tipoNominaDescripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+  </class>
+</hibernate-mapping>

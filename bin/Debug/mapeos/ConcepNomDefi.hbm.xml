@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ConcepNomDefi" table="ConcepNomDefi" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="activado" type="Boolean">
+      <column name="activado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="agregarSubcuentasPor" type="Int32">
+      <column name="agregarSubcuentasPor" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="comportamiento" type="String">
+      <column name="comportamiento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="condicionConcepto" type="String">
+      <column name="condicionConcepto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="cuentaContable" type="String">
+      <column name="cuentaContable" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionAbreviada" type="String">
+      <column name="descripcionAbreviada" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fecha" type="DateTime">
+      <column name="fecha" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="formulaConcepto" type="String">
+      <column name="formulaConcepto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="imprimirEnListadoNomina" type="Boolean">
+      <column name="imprimirEnListadoNomina" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="imprimirEnReciboNomina" type="Boolean">
+      <column name="imprimirEnReciboNomina" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="mascara" type="String">
+      <column name="mascara" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="naturaleza" type="Int32">
+      <column name="naturaleza" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="prioridadDeCalculo" type="Int32">
+      <column name="prioridadDeCalculo" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="subCuenta" type="String">
+      <column name="subCuenta" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipo" type="Int32">
+      <column name="tipo" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoAccionMascaras" type="Int32">
+      <column name="tipoAccionMascaras" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoMovto" type="Int32">
+      <column name="tipoMovto" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="activarPlaza" type="Boolean">
+      <column name="activarPlaza" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="activarDesglose" type="Boolean">
+      <column name="activarDesglose" not-null="true" sql-type="BIT" />
+    </property>
+
+    <many-to-one name="grupo" class="Grupo">
+      <column name="grupo_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="conceptoDeNomina" class="ConceptoDeNomina">
+      <column name="conceptoDeNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="categoriaPuestos" class="CategoriasPuestos">
+      <column name="categoriaPuestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="paraConcepDeNom" inverse="true" generic="true">
+      <key>
+        <column name="concepNomDefi_ID" />
+      </key>
+      <one-to-many class="ParaConcepDeNom" />
+    </bag>
+    <bag name="baseAfecConcepNom" inverse="true" generic="true" lazy="false">
+      <key>
+        <column name="concepNomDefin_ID" />
+      </key>
+      <one-to-many class="BaseAfecConcepNom" />
+    </bag>
+    <bag name="camposDimConceptos" inverse="true" generic="true">
+      <key>
+        <column name="concepnomDefi_ID" />
+      </key>
+      <one-to-many class="CamposDimConceptos" />
+    </bag>
+    <bag name="conceptoPorTipoCorrida" inverse="true" generic="true">
+      <key>
+        <column name="concepNomDefi_ID" />
+      </key>
+      <one-to-many class="ConceptoPorTipoCorrida" />
+    </bag>
+    <bag name="configConceptosSat" inverse="true" generic="true" lazy="false">
+      <key>
+        <column name="concepNomDefi_ID" />
+      </key>
+      <one-to-many class="ConfigConceptosSat" />
+    </bag>
+    <bag name="creditoAhorro_cNDescuento_ID" inverse="true" generic="true">
+      <key>
+        <column name="cNDescuento_ID" />
+      </key>
+      <one-to-many class="CreditoAhorro" />
+    </bag>
+    <bag name="creditoAhorro_cNDInteresMensual_ID" inverse="true" generic="true">
+      <key>
+        <column name="cNDInteresMensual_ID" />
+      </key>
+      <one-to-many class="CreditoAhorro" />
+    </bag>
+    <bag name="creditoAhorro_concepNomiDefin_ID" inverse="true" generic="true">
+      <key>
+        <column name="concepNomiDefin_ID" />
+      </key>
+      <one-to-many class="CreditoAhorro" />
+    </bag>
+    <bag name="excepciones" inverse="true" generic="true">
+      <key>
+        <column name="concepNomDefi_ID" />
+      </key>
+      <one-to-many class="Excepciones" />
+    </bag>
+    <bag name="movNomConcep" inverse="true" generic="true">
+      <key>
+        <column name="concepNomDefi_ID" />
+      </key>
+      <one-to-many class="MovNomConcep" />
+    </bag>
+    <bag name="salariosIntegradosDet" inverse="true" generic="true">
+      <key>
+        <column name="ConcepNomDefi_ID" />
+      </key>
+      <one-to-many class="SalariosIntegradosDet" />
+    </bag>
+  </class>
+</hibernate-mapping>

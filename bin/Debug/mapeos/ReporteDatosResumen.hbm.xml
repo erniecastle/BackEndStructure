@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ReporteDatosResumen" table="ReporteDatosResumen" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="columna" type="Int32">
+      <column name="columna" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="datosEspecialesConsulta" type="String">
+      <column name="datosEspecialesConsulta" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="operacion" type="Int32">
+      <column name="operacion" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="orden" type="Int32">
+      <column name="orden" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="repiteInformacion" type="Boolean">
+      <column name="repiteInformacion" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tamColumna" type="Int32">
+      <column name="tamColumna" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="datosConsulta" class="DatosConsulta">
+      <column name="datosConsulta_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteEstilos_reporteEstiloDetalle_ID" class="ReporteEstilos">
+      <column name="reporteEstiloDetalle_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteEstilos_reporteEstiloTitulo_ID" class="ReporteEstilos">
+      <column name="reporteEstiloTitulo_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteDinamico" class="ReporteDinamico">
+      <column name="reporteDinamico_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

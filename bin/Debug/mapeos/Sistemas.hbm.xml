@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Sistemas" table="Sistemas">
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="50" sql-type="VARCHAR(50)" />
+    </property>
+    <bag name="modulo" inverse="true" generic="true">
+      <key>
+        <column name="sistemas_ID" />
+      </key>
+      <one-to-many class="Modulo" />
+    </bag>
+    <bag name="ventana" inverse="true" generic="true">
+      <key>
+        <column name="sistemas_ID" />
+      </key>
+      <one-to-many class="Ventana" />
+    </bag>
+  </class>
+</hibernate-mapping>

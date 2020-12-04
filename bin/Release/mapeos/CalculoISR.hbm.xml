@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CalculoISR" table="CalculoISR" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="isrACargoAnual" type="Double">
+      <column name="isrACargoAnual" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrACargoDirecto" type="Double">
+      <column name="isrACargoDirecto" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrACargoNormal" type="Double">
+      <column name="isrACargoNormal" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrNetoAnual" type="Double">
+      <column name="isrNetoAnual" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrNetoDirecto" type="Double">
+      <column name="isrNetoDirecto" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrNetoNormal" type="Double">
+      <column name="isrNetoNormal" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrRetenidoAnual" type="Double">
+      <column name="isrRetenidoAnual" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrRetenidoDirecto" type="Double">
+      <column name="isrRetenidoDirecto" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrRetenidoNormal" type="Double">
+      <column name="isrRetenidoNormal" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrSubsidioAnual" type="Double">
+      <column name="isrSubsidioAnual" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrSubsidioDirecto" type="Double">
+      <column name="isrSubsidioDirecto" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="isrSubsidioNormal" type="Double">
+      <column name="isrSubsidioNormal" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="subsidioEmpleoAnual" type="Double">
+      <column name="subsidioEmpleoAnual" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="subsidioEmpleoDirecto" type="Double">
+      <column name="subsidioEmpleoDirecto" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="subsidioEmpleoNormal" type="Double">
+      <column name="subsidioEmpleoNormal" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="movNomConcep" class="MovNomConcep">
+      <column name="movNomConcep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

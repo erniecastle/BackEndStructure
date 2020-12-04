@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ConfiguracionIMSS" table="ConfiguracionIMSS" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="tipoTasa" type="Int32">
+      <column name="tipoTasa" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="aportacionInfonavitPatron" type="Double">
+      <column name="aportacionInfonavitPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="cuotaFijaPatron" type="Double">
+      <column name="cuotaFijaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="excedenteEspecie" type="Double">
+      <column name="excedenteEspecie" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="fechaAplica" type="DateTime">
+      <column name="fechaAplica" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="tasaAportacionInfonavitPatron" type="Double">
+      <column name="tasaAportacionInfonavitPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaAportacionRetiroPatron" type="Double">
+      <column name="tasaAportacionRetiroPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaCesanVejezPatron" type="Double">
+      <column name="tasaCesanVejezPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaCesantiaVejez" type="Double">
+      <column name="tasaCesantiaVejez" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaDineEnfermeMater" type="Double">
+      <column name="tasaDineEnfermeMater" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaEspecieEnfermeMater" type="Double">
+      <column name="tasaEspecieEnfermeMater" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaExcedentePatron" type="Double">
+      <column name="tasaExcedentePatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaFijaPatron" type="Double">
+      <column name="tasaFijaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaGastosPensPatron" type="Double">
+      <column name="tasaGastosPensPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaGastosPension" type="Double">
+      <column name="tasaGastosPension" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaGuarderiaPatron" type="Double">
+      <column name="tasaGuarderiaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaInvaliVidaPatron" type="Double">
+      <column name="tasaInvaliVidaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaInvalidezVida" type="Double">
+      <column name="tasaInvalidezVida" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaPrestDinePatron" type="Double">
+      <column name="tasaPrestDinePatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tasaRiesgosPatron" type="Double">
+      <column name="tasaRiesgosPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeCesanVejez" type="Double">
+      <column name="topeCesanVejez" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeInvaliVida" type="Double">
+      <column name="topeInvaliVida" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeEnfermedadMaternidad" type="Double">
+      <column name="topeEnfermedadMaternidad" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeInfonavit" type="Double">
+      <column name="topeInfonavit" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeRetiro" type="Double">
+      <column name="topeRetiro" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeRiesgoTrabajoGuarderias" type="Double">
+      <column name="topeRiesgoTrabajoGuarderias" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <bag name="calculoIMSS" inverse="true" generic="true">
+      <key>
+        <column name="configuracionIMSS_ID" />
+      </key>
+      <one-to-many class="CalculoIMSS" />
+    </bag>
+    <bag name="calculoIMSSPatron" inverse="true" generic="true">
+      <key>
+        <column name="configuracionIMSS_ID" />
+      </key>
+      <one-to-many class="CalculoIMSSPatron" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TipoElemento" table="TipoElemento" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="externo" type="Boolean">
+      <column name="externo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <bag name="contenedor" inverse="true" generic="true">
+      <key>
+        <column name="tipoElemento_ID" />
+      </key>
+      <one-to-many class="Contenedor" />
+    </bag>
+  </class>
+</hibernate-mapping>

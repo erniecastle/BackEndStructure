@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TablaDatos" table="TablaDatos" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="controlPorAnio" type="Int32">
+      <column name="controlPorAnio" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="controlPorFecha" type="DateTime">
+      <column name="controlPorFecha" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="controladores" type="String">
+      <column name="controladores" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fileXml" type="BinaryBlob">
+      <column name="fileXml" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="renglonSeleccionado" type="Boolean">
+      <column name="renglonSeleccionado" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="tablaBase" class="TablaBase">
+      <column name="tablaBase_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="tablaPersonalizada" class="TablaPersonalizada">
+      <column name="tablaPersonalizada_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

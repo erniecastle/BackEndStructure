@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CFDIRecibo" table="CFDIRecibo" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="UUID" type="String">
+      <column name="UUID" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="acuse" type="BinaryBlob">
+      <column name="acuse" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="serie" type="String">
+      <column name="serie" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="UUIDRelacionado" type="String">
+      <column name="UUIDRelacionado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+
+    <property name="cadenaCertificado" type="StringClob">
+      <column name="cadenaCertificado" not-null="false" length="2147483647" sql-type="TEXT" />
+    </property>
+    <property name="cadenaOriginalTimbrado" type="StringClob">
+      <column name="cadenaOriginalTimbrado" not-null="false" length="2147483647" sql-type="TEXT" />
+    </property>
+    <property name="fechaGeneraInfo" type="DateTime">
+      <column name="fechaGeneraInfo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaHoraTimCancelado" type="DateTime">
+      <column name="fechaHoraTimCancelado" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaEmision" type="DateTime">
+      <column name="fechaEmision" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="folioCFDI" type="String">
+      <column name="folioCFDI" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="leyenda" type="String">
+      <column name="leyenda" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="motivoCancelacion" type="String">
+      <column name="motivoCancelacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="noCertificado" type="String">
+      <column name="noCertificado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="noCertificadoSAT" type="String">
+      <column name="noCertificadoSAT" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="rfcProvCertif" type="String">
+      <column name="rfcProvCertif" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="sello" type="StringClob">
+      <column name="sello" not-null="false" length="2147483647" sql-type="TEXT" />
+    </property>
+    <property name="selloCFD" type="String">
+      <column name="selloCFD" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="selloSAT" type="StringClob">
+      <column name="selloSAT" not-null="false" length="2147483647" sql-type="TEXT" />
+    </property>
+    <property name="serieCFDI" type="String">
+      <column name="serieCFDI" not-null="false" length="25" sql-type="VARCHAR(25)" />
+    </property>
+    <property name="statusTimbrado" type="Int32">
+      <column name="statusTimbrado" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="statusXmlSat" type="Int32">
+      <column name="statusXmlSat" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="statusCorreo" type="Int32">
+      <column name="statusCorreo" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="total" type="Double">
+      <column name="total" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="version" type="String">
+      <column name="version" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="xmlTimbrado" type="BinaryBlob">
+      <column name="xmlTimbrado" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="certificadoTimbrado" type="String">
+      <column name="certificadoTimbrado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fechaHoraTimbrado" type="DateTime">
+      <column name="fechaHoraTimbrado" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="selloTimbrado" type="StringClob">
+      <column name="selloTimbrado" not-null="false" length="2147483647" sql-type="TEXT" />
+    </property>
+    <bag name="cfdiEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="cfdiRecibo_ID" />
+      </key>
+      <one-to-many class="CFDIEmpleado" />
+    </bag>
+    <bag name="cfdiReciboConcepto" inverse="true" generic="true">
+      <key>
+        <column name="cfdiRecibo_ID" />
+      </key>
+      <one-to-many class="CFDIReciboConcepto" />
+    </bag>
+    <bag name="cfdiReciboHrsExtras" inverse="true" generic="true">
+      <key>
+        <column name="cfdiRecibo_ID" />
+      </key>
+      <one-to-many class="CFDIReciboHrsExtras" />
+    </bag>
+    <bag name="cfdiReciboIncapacidad" inverse="true" generic="true">
+      <key>
+        <column name="cfdiRecibo_ID" />
+      </key>
+      <one-to-many class="CFDIReciboIncapacidad" />
+    </bag>
+  </class>
+</hibernate-mapping>

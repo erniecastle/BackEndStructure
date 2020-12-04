@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TipoNomina" table="TipoNomina" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="detalleConceptoRecibo" type="String">
+      <column name="detalleConceptoRecibo" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="folio" type="String">
+      <column name="folio" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoReporte" type="Int32">
+      <column name="tipoReporte" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="periodicidad" class="Periodicidad" lazy="false">
+      <column name="periodicidad_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="registroPatronal" class="RegistroPatronal" lazy="false">
+      <column name="registroPatronal_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="series" class="Series">
+      <column name="series_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="aguinaldoPagos" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="AguinaldoPagos" />
+    </bag>
+    <bag name="asistencias" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="Asistencias" />
+    </bag>
+    <bag name="calculoUnidades" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="CalculoUnidades" />
+    </bag>
+    <bag name="cfdiEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="CFDIEmpleado" />
+    </bag>
+    <bag name="detalleAsistencia" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="DetalleAsistencia" />
+    </bag>
+    <bag name="inasistenciaPorHora" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="InasistenciaPorHora" />
+    </bag>
+    <bag name="movNomConcep" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="MovNomConcep" />
+    </bag>
+    <bag name="periodosNomina" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="PeriodosNomina" />
+    </bag>
+    <bag name="plazas" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="plazasPorEmpleadosMov" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleadosMov" />
+    </bag>
+    <bag name="ptuEmpleados_tipoNominaPtuDias_ID" inverse="true" generic="true">
+      <key>
+        <column name="tipoNominaPtuDias_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+    <bag name="ptuEmpleados_tipoNominaPtuPercep_ID" inverse="true" generic="true">
+      <key>
+        <column name="tipoNominaPtuPercep_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+    <bag name="semaforoCalculoNomina" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="SemaforoCalculoNomina" />
+    </bag>
+    <bag name="semaforoTimbradoPac" inverse="true" generic="true">
+      <key>
+        <column name="tipoNomina_ID" />
+      </key>
+      <one-to-many class="SemaforoTimbradoPac" />
+    </bag>
+    <bag name="VacacionesDis_NominaApli" inverse="true" generic="true">
+      <key>
+        <column name="tipoNominaAplicacion_ID" />
+      </key>
+      <one-to-many class="VacacionesDisfrutadas" />
+    </bag>
+    <bag name="VacacionesDis_NominaPago" inverse="true" generic="true">
+      <key>
+        <column name="tipoNominaPago_ID" />
+      </key>
+      <one-to-many class="VacacionesDisfrutadas" />
+    </bag>
+  </class>
+</hibernate-mapping>

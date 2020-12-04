@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RegistroPatronal" table="RegistroPatronal" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="calle" type="String">
+      <column name="calle" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavedelegacion" type="String">
+      <column name="clavedelegacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavesubdelegacion" type="String">
+      <column name="clavesubdelegacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colonia" type="String">
+      <column name="colonia" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="convenio" type="Boolean">
+      <column name="convenio" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="correoelec" type="String">
+      <column name="correoelec" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="delegacion" type="String">
+      <column name="delegacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fax" type="String">
+      <column name="fax" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreregtpatronal" type="String">
+      <column name="nombreregtpatronal" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroex" type="String">
+      <column name="numeroex" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroin" type="String">
+      <column name="numeroin" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="paginainter" type="String">
+      <column name="paginainter" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="registroPatronal" type="String">
+      <column name="registroPatronal" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="riesgoPuesto" type="String">
+      <column name="riesgoPuesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="subdelegacion" type="String">
+      <column name="subdelegacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="telefono" type="String">
+      <column name="telefono" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="ciudades" class="Ciudades">
+      <column name="ciudades_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="cp" class="Cp">
+      <column name="cp_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="estados" class="Estados">
+      <column name="estados_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="municipios" class="Municipios">
+      <column name="municipios_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="paises" class="Paises">
+      <column name="paises_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="series" class="Series">
+      <column name="series_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="centroDeCosto" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="CentroDeCosto" />
+    </bag>
+    <bag name="ingresosBajas" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="IngresosBajas" />
+    </bag>
+    <bag name="plazas" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="plazasPorEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleado" />
+    </bag>
+    <bag name="primas" inverse="true" generic="true">
+      <key>
+        <column name="registrospatronal_ID" />
+      </key>
+      <one-to-many class="Primas" />
+    </bag>
+    <bag name="puestos" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="Puestos" />
+    </bag>
+    <bag name="salariosIntegrados" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="SalariosIntegrados" />
+    </bag>
+    <bag name="tipoNomina" inverse="true" generic="true">
+      <key>
+        <column name="registroPatronal_ID" />
+      </key>
+      <one-to-many class="TipoNomina" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ParaConcepDeNom" table="ParaConcepDeNom" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clasificadorParametro" type="Int32">
+      <column name="clasificadorParametro" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="mascara" type="String">
+      <column name="mascara" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="numero" type="Int32">
+      <column name="numero" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipo" type="String">
+      <column name="tipo" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="unidad" type="String">
+      <column name="unidad" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <many-to-one name="concepNomDefi" class="ConcepNomDefi">
+      <column name="concepNomDefi_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="movNomConceParam" inverse="true" generic="true">
+      <key>
+        <column name="paraConcepDeNom_ID" />
+      </key>
+      <one-to-many class="MovNomConceParam" />
+    </bag>
+  </class>
+</hibernate-mapping>

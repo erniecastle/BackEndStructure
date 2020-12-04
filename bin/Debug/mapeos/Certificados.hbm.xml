@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Certificados" table="Certificados" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="certificado" type="BinaryBlob">
+      <column name="certificado" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="llavePrivada" type="BinaryBlob">
+      <column name="llavePrivada" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="password" type="String">
+      <column name="password" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="vigenciaDesde" type="DateTime">
+      <column name="vigenciaDesde" not-null="true" sql-type="DATETIME" />
+    </property>
+    <property name="vigenciaHasa" type="DateTime">
+      <column name="vigenciaHasa" not-null="true" sql-type="DATETIME" />
+    </property>
+    <property name="noCertificado" type="String">
+      <column name="noCertificado" not-null="true" length="20" sql-type="VARCHAR(20)" />
+    </property>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

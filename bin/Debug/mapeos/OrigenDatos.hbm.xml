@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="OrigenDatos" table="OrigenDatos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="origen" type="String">
+      <column name="origen" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="recurso" type="String">
+      <column name="recurso" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="estado" type="Boolean">
+      <column name="estado" not-null="true" sql-type="BIT" />
+    </property>
+    <bag name="origenDatosFuente" table="DetalleOrigenDatos"  generic="true">
+      <key not-null="true">
+        <column name="origenDatosFuente_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </key>
+      <many-to-many class="OrigenDatos" fetch="join">
+        <column name="origenDatos_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </many-to-many>
+    </bag>
+    <bag name="camposOrigenDatos" inverse="true" generic="true">
+      <key>
+        <column name="origenDatos_ID" />
+      </key>
+      <one-to-many class="CamposOrigenDatos" />
+    </bag>
+    <bag name="configuracionCapturas" inverse="true" generic="true">
+      <key>
+        <column name="origenDeDatos_ID" />
+      </key>
+      <one-to-many class="ConfiguracionCapturas" />
+    </bag>
+    <bag name="detalleConfigCapturas" inverse="true" generic="true">
+      <key>
+        <column name="origenDatos_ID" />
+      </key>
+      <one-to-many class="DetalleConfigCapturas" />
+    </bag>
+    <bag name="origenDatosPrincipal" table="DetalleOrigenDatos"  inverse="true" generic="true">
+      <key>
+        <column name="origenDatos_ID" />
+      </key>
+      <many-to-many class="OrigenDatos" fetch="join">
+        <column name="origenDatosFuente_ID" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

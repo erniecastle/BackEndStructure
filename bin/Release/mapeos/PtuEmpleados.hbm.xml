@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PtuEmpleados" table="PtuEmpleados" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clasificacion" type="String">
+      <column name="clasificacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="diasLaborados" type="Double">
+      <column name="diasLaborados" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="ejercicio" type="Int32">
+      <column name="ejercicio" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="esDirectivo" type="Boolean">
+      <column name="esDirectivo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="fechaBaja" type="DateTime">
+      <column name="fechaBaja" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaIngreso" type="DateTime">
+      <column name="fechaIngreso" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="observaciones" type="String">
+      <column name="observaciones" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="participa" type="Boolean">
+      <column name="participa" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="percepciones" type="Double">
+      <column name="percepciones" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="ptuDias" type="Double">
+      <column name="ptuDias" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="ptuPercepciones" type="Double">
+      <column name="ptuPercepciones" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina_periodoPtuDias_ID" class="PeriodosNomina">
+      <column name="periodoPtuDias_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina_periodoPtuPercep_ID" class="PeriodosNomina">
+      <column name="periodoPtuPercep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina_tipoNominaPtuDias_ID" class="TipoNomina">
+      <column name="tipoNominaPtuDias_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina_tipoNominaPtuPercep_ID" class="TipoNomina">
+      <column name="tipoNominaPtuPercep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="puestos" class="Puestos">
+      <column name="puestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoCorrida_tipoCorridaPtuDias_ID" class="TipoCorrida">
+      <column name="tipoCorridaPtuDias_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoCorrida_tipoCorridaPtuPercep_ID" class="TipoCorrida">
+      <column name="tipoCorridaPtuPercep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

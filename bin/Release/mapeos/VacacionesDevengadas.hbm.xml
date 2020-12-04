@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VacacionesDevengadas" table="VacacionesDevengadas" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="diasPrimaVaca" type="Double">
+      <column name="diasPrimaVaca" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasVacaciones" type="Int32">
+      <column name="diasVacaciones" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="ejercicio" type="Int32">
+      <column name="ejercicio" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="factorPrima" type="Double">
+      <column name="factorPrima" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="registroInicial" type="Boolean">
+      <column name="registroInicial" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="salarioAniversario" type="Double">
+      <column name="salarioAniversario" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="vacacionesAplicacion" inverse="true" generic="true">
+      <key>
+        <column name="vacacionesDevengadas_ID" />
+      </key>
+      <one-to-many class="VacacionesAplicacion" />
+    </bag>
+  </class>
+</hibernate-mapping>

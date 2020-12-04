@@ -1,0 +1,1213 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <JSON Ref="2" type="Stimulsoft.Report.Dictionary.StiJsonDatabase" isKey="true">
+        <Alias>JSON</Alias>
+        <Key>01e0f8eed79547e08b31837a8e2f8485</Key>
+        <Name>JSON</Name>
+        <PathData />
+      </JSON>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <root Ref="3" type="DataTableSource" isKey="true">
+        <Alias>root</Alias>
+        <Columns isList="true" count="46">
+          <value>ORIGINAL,id,id,id,System.Decimal,d5ac44df335e430684b86bec4cca0f8c</value>
+          <value>ORIGINAL,clave,clave,clave,System.String,f9e052649a79437489fcdf0905fdcd66</value>
+          <value>ORIGINAL,NoCertificadoSAT,NoCertificadoSAT,NoCertificadoSAT,System.Object,_x0033_0d92285e4244a3e9ff7c3a2fc1d0362</value>
+          <value>NoCertificado,System.String</value>
+          <value>FechaTimbrado,System.DateTime</value>
+          <value>RegimenFiscal,System.String</value>
+          <value>TipoDeComprobante,System.String</value>
+          <value>Folio,System.String</value>
+          <value>Serie,System.String</value>
+          <value>FechaHoraEmision,System.DateTime</value>
+          <value>MetodoPago,System.String</value>
+          <value>RegistroPatronal,System.String</value>
+          <value>NumEmpleado,System.String</value>
+          <value>TipoRegimen,System.String</value>
+          <value>Departamento,System.String</value>
+          <value>Puesto,System.String</value>
+          <value>RiesgoPuesto,System.String</value>
+          <value>TipoContrato,System.String</value>
+          <value>Antiguedad,System.String</value>
+          <value>FechaInicioRelLaboral,System.String</value>
+          <value>PeriodicidadPago,System.String</value>
+          <value>SalarioBaseCotApor,System.String</value>
+          <value>SalarioDiarioIntegrado,System.String</value>
+          <value>FechaPago,System.String</value>
+          <value>FechaInicialPago,System.String</value>
+          <value>FechaFinalPago,System.String</value>
+          <value>NumDiasPagados,System.String</value>
+          <value>RFCEmisor,System.String</value>
+          <value>NombreEmisor,System.String</value>
+          <value>LugarExpedicion,System.String</value>
+          <value>RFCReceptor,System.String</value>
+          <value>NombreReceptor,System.String</value>
+          <value>CurpReceptor,System.String</value>
+          <value>NumSeguridadSocial,System.String</value>
+          <value>Percepciones,System.String</value>
+          <value>TotalPercepciones,System.Decimal</value>
+          <value>Deducciones,System.String</value>
+          <value>TotalDeducciones,System.Decimal</value>
+          <value>OtrosPagos,System.String</value>
+          <value>NetoAPagar,System.Decimal</value>
+          <value>ImporteALetras,System.String</value>
+          <value>CadenaOriginalSAT,System.String</value>
+          <value>SelloDigitalCFDI,System.String</value>
+          <value>SelloDigitalSAT,System.String</value>
+          <value>UUID,System.String</value>
+          <value>DataQr,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>207cc2ed1d144d6299cb7d92f59556f9</Key>
+        <Name>root</Name>
+        <NameInSource>JSON.root</NameInSource>
+      </root>
+      <root_Deducciones Ref="4" type="DataTableSource" isKey="true">
+        <Alias>root_Deducciones</Alias>
+        <Columns isList="true" count="6">
+          <value>idMaster,System.Decimal</value>
+          <value>TipoDeduccion,System.String</value>
+          <value>Clave,System.String</value>
+          <value>Concepto,System.String</value>
+          <value>Importe,System.String</value>
+          <value>relationId,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>fa46746059f24bebb7528ffd28851c76</Key>
+        <Name>root_Deducciones</Name>
+        <NameInSource>JSON.root_Deducciones</NameInSource>
+      </root_Deducciones>
+      <root_OtrosPagos Ref="5" type="DataTableSource" isKey="true">
+        <Alias>root_OtrosPagos</Alias>
+        <Columns isList="true" count="6">
+          <value>idMaster,System.Decimal</value>
+          <value>TipoOtroPago,System.String</value>
+          <value>Clave,System.String</value>
+          <value>Concepto,System.String</value>
+          <value>Importe,System.String</value>
+          <value>relationId,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>57596861667c495fbd571062da9b019c</Key>
+        <Name>root_OtrosPagos</Name>
+        <NameInSource>JSON.root_OtrosPagos</NameInSource>
+      </root_OtrosPagos>
+      <root_Percepciones Ref="6" type="DataTableSource" isKey="true">
+        <Alias>root_Percepciones</Alias>
+        <Columns isList="true" count="7">
+          <value>idMaster,System.Decimal</value>
+          <value>TipoPercepcion,System.String</value>
+          <value>Clave,System.String</value>
+          <value>Concepto,System.String</value>
+          <value>ImporteGravado,System.String</value>
+          <value>ImporteExento,System.String</value>
+          <value>relationId,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>d98d028d78294a25a5121ca3877e5e3b</Key>
+        <Name>root_Percepciones</Name>
+        <NameInSource>JSON.root_Percepciones</NameInSource>
+      </root_Percepciones>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="1">
+      <value>,isOtrosPagos,isOtrosPagos,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1.0_x0022__x0020_encoding_x003D__x0022_utf-16_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1.02_x0022__x0020_type_x003D__x0022_Net_x0022__x0020_application_x003D__x0022_State_x0022__x003E__x003C_BindingVariable_x0020_isNull_x003D__x0022_true_x0022__x0020__x002F__x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_2_x0022__x003E__x003C_value_x003E_1_x003C__x002F_value_x003E__x003C_value_x003E_2_x003C__x002F_value_x003E__x003C__x002F_Keys_x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_2_x0022__x003E__x003C_value_x003E_1_x003C__x002F_value_x003E__x003C_value_x003E_2_x003C__x002F_value_x003E__x003C__x002F_Values_x003E__x003C_ValuesBinding_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_2_x0022__x003E__x003C_value_x0020__x002F__x003E__x003C_value_x0020__x002F__x003E__x003C__x002F_ValuesBinding_x003E__x003C__x002F_StiSerializer_x003E_</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>fe9205f314ea4846806dc8778f63c8a7</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="4">
+    <ReceiptAsim Ref="7" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <DataBand1 Ref="8" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,19,27</ClientRectangle>
+          <Components isList="true" count="53">
+            <Text1 Ref="9" type="Text" isKey="true">
+              <Brush>Black</Brush>
+              <ClientRectangle>0.4,5.6,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+            <Text3 Ref="10" type="Text" isKey="true">
+              <Brush>Black</Brush>
+              <ClientRectangle>13.8,0,5.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>
+RECIBO DE
+ASIMILADOS A SALARIOS</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+            <Text54 Ref="11" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,1.2,0.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>R.F.C.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text54>
+            <Text56 Ref="12" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.3,1.2,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.RFCEmisor}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text56>
+            <BarCode2 Ref="13" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
+              <BackColor>White</BackColor>
+              <BarCodeType Ref="14" type="Stimulsoft.Report.BarCodes.StiQRCodeBarCodeType" isKey="true">
+                <Module>20</Module>
+              </BarCodeType>
+              <ClientRectangle>0.8,19.7,2.8,2.8</ClientRectangle>
+              <Code>{root.DataQr}</Code>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold,Pixel</Font>
+              <ForeColor>Black</ForeColor>
+              <Name>BarCode2</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+            </BarCode2>
+            <Text57 Ref="15" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,0.2,9.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.NombreEmisor}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text57>
+            <Text60 Ref="16" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,4,0.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>R.F.C.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text60>
+            <Text61 Ref="17" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.8,4,3.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.RFCReceptor}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text61>
+            <Text62 Ref="18" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.8,3.2,8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.NombreReceptor}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text62>
+            <Text63 Ref="19" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,3.6,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>C.U.R.P.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text63>
+            <Text65 Ref="20" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.8,3.6,3.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.CurpReceptor}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text65>
+            <Text68 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.7,5.7,2.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>DEDUCCIONES</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text68>
+            <Shape2 Ref="22" type="Shape" isKey="true">
+              <BorderColor>Black</BorderColor>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.1,6,0.2,5.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Name>Shape2</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <ShapeType Ref="23" type="Stimulsoft.Report.Components.ShapeTypes.StiVerticalLineShapeType" isKey="true" />
+            </Shape2>
+            <Shape1 Ref="24" type="Shape" isKey="true">
+              <BorderColor>Black</BorderColor>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,11.1,18,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Name>Shape1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <ShapeType Ref="25" type="Stimulsoft.Report.Components.ShapeTypes.StiHorizontalLineShapeType" isKey="true" />
+            </Shape1>
+            <SubReport1 Ref="26" type="SubReport" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.7,6.2,7.8,2</ClientRectangle>
+              <Components isList="true" count="0" />
+              <Conditions isList="true" count="0" />
+              <KeepSubReportTogether>True</KeepSubReportTogether>
+              <Name>SubReport1</Name>
+              <Page isRef="7" />
+              <Parameters isList="true" count="0" />
+              <Parent isRef="8" />
+              <SubReportPageGuid>515b9d347c3e429185b0bd00c380d1dd</SubReportPageGuid>
+              <SubReportUrl />
+            </SubReport1>
+            <SubReport2 Ref="27" type="SubReport" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,6.2,8.6,2</ClientRectangle>
+              <Components isList="true" count="0" />
+              <Conditions isList="true" count="0" />
+              <Name>SubReport2</Name>
+              <Page isRef="7" />
+              <Parameters isList="true" count="0" />
+              <Parent isRef="8" />
+              <SubReportPageGuid>76756b8855fa4e76bab18afae403b19c</SubReportPageGuid>
+              <SubReportUrl />
+            </SubReport2>
+            <Text79 Ref="28" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>3.6,19.7,9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.2,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Cadena Original del complemento de certificación digital del SAT</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text79>
+            <Text80 Ref="29" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.6,20.1,15,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.CadenaOriginalSAT}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+            </Text80>
+            <Text81 Ref="30" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.6,11.3,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Total de percepciones</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text81>
+            <Text82 Ref="31" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>9.4,11.3,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Total de deducciones</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text82>
+            <Text83 Ref="32" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>7.6,11.3,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.TotalPercepciones}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="33" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>2</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+              </TextFormat>
+            </Text83>
+            <Text84 Ref="34" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>16.8,11.3,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.TotalDeducciones}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="35" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>2</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+              </TextFormat>
+              <Type>DataColumn</Type>
+            </Text84>
+            <Text91 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12,14.58,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text91</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>En una sola exhibición</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text91>
+            <Text92 Ref="37" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1,13.1,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text92</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Neto pagado</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text92>
+            <Text93 Ref="38" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,13,1.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text93</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.NetoAPagar}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="39" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>2</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text93>
+            <Text94 Ref="40" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,16.2,3.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text94</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Sello Digital del CFDI</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text94>
+            <Text95 Ref="41" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,16.6,15,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text95</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.SelloDigitalCFDI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>DataColumn</Type>
+            </Text95>
+            <Text96 Ref="42" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,18,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text96</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Sello Digital del SAT</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text96>
+            <Text97 Ref="43" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,18.4,15,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Width</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text97</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.SelloDigitalSAT}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>DataColumn</Type>
+            </Text97>
+            <Text2 Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,2.8,2.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.clave}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+            <Text4 Ref="45" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,2.8,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Clave:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text4>
+            <Text5 Ref="46" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,3.2,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Nombre:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+            <Text6 Ref="47" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.4,4.4,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Tipo de Régimen:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text6>
+            <Text7 Ref="48" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>3,4.4,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Asimilados Horarios</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text7>
+            <Text67 Ref="49" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.4,5.7,2.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>PERCEPCIONES</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text67>
+            <Text8 Ref="50" type="Text" isKey="true">
+              <Brush>Black</Brush>
+              <ClientRectangle>0.8,13.6,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text8>
+            <Text9 Ref="51" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,13.7,10.6,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>ESTE DOCUMENTO ES UNA REPRESENTACIÓN IMPRESA DE UN CFDI</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+            </Text9>
+            <Text10 Ref="52" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>10.8,13,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>FIRMA:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text10>
+            <Text11 Ref="53" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,14.2,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Folio Fiscal</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text11>
+            <Text12 Ref="54" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,14.6,3.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>No.Serie del certificado CSD:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text12>
+            <Text13 Ref="55" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,15,1.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Expedido en:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text13>
+            <Text14 Ref="56" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.8,15.4,3.5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Regimen fiscal del emisor:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text14>
+            <Text15 Ref="57" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>9.6,14.2,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Método de pago:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text15>
+            <Text16 Ref="58" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>9.6,14.6,2.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Forma de pago:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text16>
+            <Text17 Ref="59" type="Text" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>9.6,15,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>Serie y folio del recibo:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text17>
+            <Text18 Ref="60" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12,14.18,0.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>NA</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text20 Ref="61" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.7,14.98,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.Serie + root.Folio}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 Ref="62" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.6,15,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.LugarExpedicion}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text22 Ref="63" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.3,15.38,3.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.RegimenFiscal}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text19 Ref="64" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.3,14.17,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.UUID}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text23 Ref="65" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.5,14.6,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <Text>{root.NoCertificado}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Panel1 Ref="66" type="Panel" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,9.2,8,1.8</ClientRectangle>
+              <Components isList="true" count="1">
+                <SubReport3 Ref="67" type="SubReport" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.1,0.2,7.8,1.4</ClientRectangle>
+                  <Components isList="true" count="0" />
+                  <Conditions isList="true" count="0" />
+                  <Name>SubReport3</Name>
+                  <Page isRef="7" />
+                  <Parameters isList="true" count="0" />
+                  <Parent isRef="66" />
+                  <SubReportPageGuid>db8e9c5a04f54b6c9a320d0c83ad23a9</SubReportPageGuid>
+                  <SubReportUrl />
+                </SubReport3>
+              </Components>
+              <Conditions isList="true" count="1">
+                <value>_x007B_isOtrosPagos_x0020__x0021__x003D__x0020__x0022_1_x0022__x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+              </Conditions>
+              <Name>Panel1</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+            </Panel1>
+            <HorizontalLinePrimitive2 Ref="68" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>12.2,13.2,6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions isList="true" count="0" />
+              <EndCap Ref="69" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive2</Name>
+              <Page isRef="7" />
+              <Parent isRef="8" />
+              <StartCap Ref="70" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>root</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="7" />
+          <Parent isRef="7" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>ca3da2aa58084250a8933d81ef27621f</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>ReceiptAsim</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+    </ReceiptAsim>
+    <RecNomPercepciones Ref="71" type="Page" isKey="true">
+      <Alias>Percepciones</Alias>
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>EmptyBrush</Brush>
+      <Components isList="true" count="1">
+        <Dataroot_Percepciones Ref="72" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,7.8,0.2</ClientRectangle>
+          <Components isList="true" count="4">
+            <Dataroot_Percepciones_TipoPercepcion Ref="73" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Percepciones_TipoPercepcion</Name>
+              <Page isRef="71" />
+              <Parent isRef="72" />
+              <Text>{root_Percepciones.TipoPercepcion}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Percepciones_TipoPercepcion>
+            <Dataroot_Percepciones_Clave Ref="74" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.1,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Percepciones_Clave</Name>
+              <Page isRef="71" />
+              <Parent isRef="72" />
+              <Text>{root_Percepciones.Clave}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Percepciones_Clave>
+            <Dataroot_Percepciones_Concepto Ref="75" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.3,0,5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Percepciones_Concepto</Name>
+              <Page isRef="71" />
+              <Parent isRef="72" />
+              <Text>{root_Percepciones.Concepto}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Percepciones_Concepto>
+            <Dataroot_Percepciones_ImporteGravado Ref="76" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6,0,1.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Percepciones_ImporteGravado</Name>
+              <NullValue>-</NullValue>
+              <Page isRef="71" />
+              <Parent isRef="72" />
+              <Text>{(root_Percepciones.ImporteExento == "0") ? "$" + root_Percepciones.ImporteGravado : "$" + root_Percepciones.ImporteExento}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Percepciones_ImporteGravado>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>Relación</DataRelationName>
+          <DataSourceName>root_Percepciones</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Dataroot_Percepciones</Name>
+          <Page isRef="71" />
+          <Parent isRef="71" />
+          <Sort isList="true" count="0" />
+        </Dataroot_Percepciones>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>515b9d347c3e429185b0bd00c380d1dd</Guid>
+      <Margins>0,0,0,0</Margins>
+      <Name>RecNomPercepciones</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>7.8</PageWidth>
+      <Report isRef="0" />
+    </RecNomPercepciones>
+    <RecNomDeducciones Ref="77" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <Dataroot_Deducciones Ref="78" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,8.6,0.2</ClientRectangle>
+          <Components isList="true" count="4">
+            <Dataroot_Deducciones_TipoDeduccion Ref="79" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Deducciones_TipoDeduccion</Name>
+              <Page isRef="77" />
+              <Parent isRef="78" />
+              <Text>{root_Deducciones.TipoDeduccion}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Deducciones_TipoDeduccion>
+            <Dataroot_Deducciones_Clave Ref="80" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Deducciones_Clave</Name>
+              <Page isRef="77" />
+              <Parent isRef="78" />
+              <Text>{root_Deducciones.Clave}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Deducciones_Clave>
+            <Dataroot_Deducciones_Concepto Ref="81" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.4,0,3.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Deducciones_Concepto</Name>
+              <Page isRef="77" />
+              <Parent isRef="78" />
+              <Text>{root_Deducciones.Concepto}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Deducciones_Concepto>
+            <Dataroot_Deducciones_Importe Ref="82" type="Text" isKey="true">
+              <AllowHtmlTags>True</AllowHtmlTags>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7,0,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Dataroot_Deducciones_Importe</Name>
+              <Page isRef="77" />
+              <Parent isRef="78" />
+              <Text>{"$"+root_Deducciones.Importe}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Dataroot_Deducciones_Importe>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>Relación2</DataRelationName>
+          <DataSourceName>root_Deducciones</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Dataroot_Deducciones</Name>
+          <Page isRef="77" />
+          <Parent isRef="77" />
+          <Sort isList="true" count="0" />
+        </Dataroot_Deducciones>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>76756b8855fa4e76bab18afae403b19c</Guid>
+      <Margins>0,0,0,0</Margins>
+      <Name>RecNomDeducciones</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>8.6</PageWidth>
+      <Report isRef="0" />
+    </RecNomDeducciones>
+    <OtrosPagos Ref="83" type="Page" isKey="true">
+      <Alias>OtrosPagos</Alias>
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <Dataroot_OtrosPagos Ref="84" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,7.8,0.4</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text24 Ref="85" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="83" />
+              <Parent isRef="84" />
+              <Text>{root_OtrosPagos.Clave}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text25 Ref="86" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="83" />
+              <Parent isRef="84" />
+              <Text>{root_OtrosPagos.Clave}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text26 Ref="87" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0,3.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="83" />
+              <Parent isRef="84" />
+              <Text>{root_OtrosPagos.Concepto}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <Text27 Ref="88" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.2,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="83" />
+              <Parent isRef="84" />
+              <Text>{"$"+root_OtrosPagos.Importe}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>root_OtrosPagos</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Dataroot_OtrosPagos</Name>
+          <Page isRef="83" />
+          <Parent isRef="83" />
+          <Sort isList="true" count="0" />
+        </Dataroot_OtrosPagos>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>db8e9c5a04f54b6c9a320d0c83ad23a9</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>OtrosPagos</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>9.8</PageWidth>
+      <Report isRef="0" />
+    </OtrosPagos>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/20/2020 7:32:46 PM</ReportChanged>
+  <ReportCreated>6/4/2020 11:23:37 PM</ReportCreated>
+  <ReportFile>C:\Users\jevalenzuela\Documents\FuentesPayroll\NomRH\Exitosw.Payroll.Core\Reports\ReportAsimilados.mrt</ReportFile>
+  <ReportGuid>248f3f05025c4bc4ad78e9209962c3b4</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2020.2.3.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

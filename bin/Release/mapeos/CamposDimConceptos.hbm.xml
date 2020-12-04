@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CamposDimConceptos" table="CamposDimConceptos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="operacion" type="String">
+      <column name="operacion" not-null="false" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="tipoDato" type="String">
+      <column name="tipoDato" not-null="false" sql-type="VARCHAR(MAX)" />
+    </property>
+    <many-to-one name="campoDIM" class="CampoDIM">
+      <column name="campoDIM_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="concepNomDefi" class="ConcepNomDefi">
+      <column name="concepnomDefi_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

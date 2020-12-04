@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ParametrosConsulta" table="ParametrosConsulta" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="addSeparadorGrupos" type="String">
+      <column name="addSeparadorGrupos" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="autoCompletarGrupos" type="String">
+      <column name="autoCompletarGrupos" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="camposAgrupar" type="String">
+      <column name="camposAgrupar" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="camposMostrar" type="String">
+      <column name="camposMostrar" not-null="false" length="1000" sql-type="VARCHAR(1000)" />
+    </property>
+    <property name="camposTotalizar" type="String">
+      <column name="camposTotalizar" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="camposWhereExtras" type="String">
+      <column name="camposWhereExtras" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="datosEspecialesConsulta" type="String">
+      <column name="datosEspecialesConsulta" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="modoVisualizarTabla" type="Boolean">
+      <column name="modoVisualizarTabla" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreAbreviado" type="String">
+      <column name="nombreAbreviado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="sizeColumnas" type="String">
+      <column name="sizeColumnas" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoFormatoCamposMostrar" type="String">
+      <column name="tipoFormatoCamposMostrar" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="tipoFormatoTotales" type="String">
+      <column name="tipoFormatoTotales" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="tipoOrdenado" type="String">
+      <column name="tipoOrdenado" not-null="false" length="5" sql-type="VARCHAR(5)" />
+    </property>
+    <property name="tituloCamposVisualizar" type="String">
+      <column name="tituloCamposVisualizar" not-null="false" length="2000" sql-type="VARCHAR(2000)" />
+    </property>
+    <property name="tituloGrupoVisualizar" type="String">
+      <column name="tituloGrupoVisualizar" not-null="false" length="1000" sql-type="VARCHAR(1000)" />
+    </property>
+    <property name="tituloTotalVisualizar" type="String">
+      <column name="tituloTotalVisualizar" not-null="false" length="1000" sql-type="VARCHAR(1000)" />
+    </property>
+    <property name="totalGlobal" type="Boolean">
+      <column name="totalGlobal" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="totalizarGrupos" type="String">
+      <column name="totalizarGrupos" not-null="false" length="500" sql-type="VARCHAR(500)" />
+    </property>
+    <property name="usaFiltroCorrida" type="Boolean">
+      <column name="usaFiltroCorrida" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="contenedor" class="Contenedor">
+      <column name="contenedorGrupo_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="reporteFuenteDatos" class="ReporteFuenteDatos">
+      <column name="reporteFuenteDatos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Series" table="Series" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="serie" type="String">
+      <column name="serie" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    
+    <property name="longitudFolio" type="Int32">
+      <column name="longitudFolio" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="folioInicial" type="Int32">
+      <column name="folioInicial" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="limiteAdvertencia" type="Int32">
+      <column name="limiteAdvertencia" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <bag name="tipoNomina" inverse="true" generic="true">
+      <key>
+        <column name="series_ID" />
+      </key>
+      <one-to-many class="TipoNomina" />
+    </bag>
+    <bag name="razonesSociales" inverse="true" generic="true">
+      <key>
+        <column name="series_ID" />
+      </key>
+      <one-to-many class="RazonesSociales" />
+    </bag>
+    <bag name="registroPatronal" inverse="true" generic="true">
+      <key>
+        <column name="series_ID" />
+      </key>
+      <one-to-many class="RegistroPatronal" />
+    </bag>
+  </class>
+</hibernate-mapping>

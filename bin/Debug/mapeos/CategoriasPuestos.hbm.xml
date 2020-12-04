@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CategoriasPuestos" table="CategoriasPuestos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="estado" type="Boolean">
+      <column name="estado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="pagarPorHoras" type="Boolean">
+      <column name="pagarPorHoras" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tablaBase" type="Byte[]">
+      <column name="tablaBase" not-null="false" length="255" sql-type="VARBINARY(255)" />
+    </property>
+    <bag name="percepcionesFijas" inverse="true" generic="true" lazy="true" fetch="select">
+      <key>
+        <column name="categoriasPuestos_ID" />
+      </key>
+      <one-to-many class="PercepcionesFijas" />
+    </bag>
+    <bag name="plazas" inverse="true" generic="true" lazy="true" fetch="select">
+      <key>
+        <column name="categoriasPuestos_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="puestos" inverse="true" generic="true" lazy="true" fetch="select">
+      <key>
+        <column name="categoriasPuestos_ID" />
+      </key>
+      <one-to-many class="Puestos" />
+    </bag>
+  </class>
+</hibernate-mapping>

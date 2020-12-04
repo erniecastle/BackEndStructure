@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Plazas" table="Plazas" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="cantidadPlazas" type="Int32">
+      <column name="cantidadPlazas" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="datosAdicionales" type="String">
+      <column name="datosAdicionales" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="funciones" type="String">
+      <column name="funciones" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="habilidades" type="String">
+      <column name="habilidades" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="horas" type="Double">
+      <column name="horas" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="importe" type="Double">
+      <column name="importe" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="observaciones" type="String">
+      <column name="observaciones" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="perfil" type="String">
+      <column name="perfil" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="salarioPor" type="Int32">
+      <column name="salarioPor" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="salida" type="DateTime">
+      <column name="salida" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="tipoRelacionLaboral" type="Int32">
+      <column name="tipoRelacionLaboral" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoSalario" type="Int32">
+      <column name="tipoSalario" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="categoriasPuestos" class="CategoriasPuestos">
+      <column name="categoriasPuestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="centroDeCosto" class="CentroDeCosto">
+      <column name="centroDeCosto_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="departamentos" class="Departamentos">
+      <column name="departamentos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="plaza_plazasSubordinadoA_ID" class="Plazas">
+      <column name="plazasSubordinadoA_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoContrato" class="TipoContrato">
+      <column name="tipoContrato_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina" class="TipoNomina">
+      <column name="tipoNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="turnos" class="Turnos">
+      <column name="turnos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="puestos" class="Puestos">
+      <column name="puestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="registroPatronal" class="RegistroPatronal">
+      <column name="registroPatronal_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="experienciaLaboralInterna" inverse="true" generic="true">
+      <key>
+        <column name="plazas_ID" />
+      </key>
+      <one-to-many class="ExperienciaLaboralInterna" />
+    </bag>
+    <bag name="plazas_plazasSubordinadoA_ID" inverse="true" generic="true">
+      <key>
+        <column name="plazasSubordinadoA_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="plazasPorEmpleadosMov" inverse="true" generic="true">
+      <key>
+        <column name="plazas_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleadosMov" />
+    </bag>
+  </class>
+</hibernate-mapping>

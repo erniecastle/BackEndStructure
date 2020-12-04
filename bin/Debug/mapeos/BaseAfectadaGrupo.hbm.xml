@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="BaseAfectadaGrupo" table="BaseAfectadaGrupo" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="formulaExenta" type="String">
+      <column name="formulaExenta" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="periodoExentoISR" type="String">
+      <column name="periodoExentoISR" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoAfecta" type="Int32">
+      <column name="tipoAfecta" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="grupo" class="Grupo">
+      <column name="grupo_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="baseNomina" class="BaseNomina">
+      <column name="baseNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

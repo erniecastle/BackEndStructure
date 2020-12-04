@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FormatoCnxConta" table="FormatoCnxConta" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="conceptoPoliza" type="String">
+      <column name="conceptoPoliza" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="diario" type="String">
+      <column name="diario" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="modoConcepto" type="Int32">
+      <column name="modoConcepto" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="separarPoliXCfdi" type="Boolean">
+      <column name="separarPoliXCfdi" not-null="true" sql-type="BIT" />
+    </property>
+    <bag name="formatosCnxContaDet" inverse="true" generic="true">
+      <key>
+        <column name="formatoCnxConta_ID" />
+      </key>
+      <one-to-many class="FormatosCnxContaDet" />
+    </bag>
+  </class>
+</hibernate-mapping>

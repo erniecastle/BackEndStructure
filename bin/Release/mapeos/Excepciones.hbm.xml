@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Excepciones" table="Excepciones" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="35" sql-type="VARCHAR(35)" />
+    </property>
+    <property name="excepcion" type="String">
+      <column name="excepcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="naturaleza" type="Int32">
+      <column name="naturaleza" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="orden" type="Int32">
+      <column name="orden" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoDatoExcepcion" type="Int32">
+      <column name="tipoDatoExcepcion" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="unico" type="Boolean">
+      <column name="unico" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="concepNomDefi" class="ConcepNomDefi">
+      <column name="concepNomDefi_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="configAsistencias" table="ConfigAsistencias_Excepciones"  generic="true">
+      <key not-null="true">
+        <column name="excepciones_Id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      </key>
+      <many-to-many class="ConfigAsistencias" fetch="join">
+        <column name="configuracionAsistencias_Id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </many-to-many>
+    </bag>
+    <bag name="asistencias" inverse="true" generic="true">
+      <key>
+        <column name="excepciones_ID" />
+      </key>
+      <one-to-many class="Asistencias" />
+    </bag>
+  </class>
+</hibernate-mapping>

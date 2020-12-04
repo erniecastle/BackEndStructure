@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PeriodosNomina" table="PeriodosNomina" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="acumularAMes" type="DateTime">
+      <column name="acumularAMes" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="año" type="Int32">
+      <column name="año" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="bloquear" type="Boolean">
+      <column name="bloquear" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cierreMes" type="Boolean">
+      <column name="cierreMes" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveUsuario" type="String">
+      <column name="claveUsuario" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descontarAhorro" type="Boolean">
+      <column name="descontarAhorro" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descontarPrestamo" type="Boolean">
+      <column name="descontarPrestamo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="detalleConceptoRecibo" type="String">
+      <column name="detalleConceptoRecibo" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="diasIMSS" type="Int32">
+      <column name="diasIMSS" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasPago" type="Int32">
+      <column name="diasPago" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="fechaAsistenciInicial" type="DateTime">
+      <column name="fechaAsistenciInicial" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaAsistenciaFinal" type="DateTime">
+      <column name="fechaAsistenciaFinal" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaCierre" type="DateTime">
+      <column name="fechaCierre" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaFinal" type="DateTime">
+      <column name="fechaFinal" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaInicial" type="DateTime">
+      <column name="fechaInicial" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaModificado" type="DateTime">
+      <column name="fechaModificado" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaPago" type="DateTime">
+      <column name="fechaPago" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="incluirBajas" type="Boolean">
+      <column name="incluirBajas" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="origen" type="Boolean">
+      <column name="origen" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="soloPercepciones" type="Boolean">
+      <column name="soloPercepciones" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="status" type="Boolean">
+      <column name="status" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tipoUso" type="Int32">
+      <column name="tipoUso" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="tipoCorrida" class="TipoCorrida">
+      <column name="tipoCorrida_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina" class="TipoNomina">
+      <column name="tipoNomina_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="aguinaldoPagos" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="AguinaldoPagos" />
+    </bag>
+    <bag name="asistencias" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="Asistencias" />
+    </bag>
+    <bag name="calculoUnidades" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="CalculoUnidades" />
+    </bag>
+    <bag name="cfdiEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="CFDIEmpleado" />
+    </bag>
+    <bag name="creditoMovimientos" inverse="true" generic="true">
+      <key>
+        <column name="initPeriodNom_ID" />
+      </key>
+      <one-to-many class="CreditoMovimientos" />
+    </bag>
+    <bag name="creditoPorEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="CreditoPorEmpleado" />
+    </bag>
+    <bag name="detalleAsistencia" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="DetalleAsistencia" />
+    </bag>
+    <bag name="inasistenciaPorHora" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="InasistenciaPorHora" />
+    </bag>
+    <bag name="movNomConcep" inverse="true" generic="true">
+      <key>
+        <column name="periodosNomina_ID" />
+      </key>
+      <one-to-many class="MovNomConcep" />
+    </bag>
+    <bag name="ptuEmpleados_periodoPtuDias_ID" inverse="true" generic="true">
+      <key>
+        <column name="periodoPtuDias_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+    <bag name="ptuEmpleados_periodoPtuPercep_ID" inverse="true" generic="true">
+      <key>
+        <column name="periodoPtuPercep_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+    <bag name="semaforoCalculoNomina" inverse="true" generic="true">
+      <key>
+        <column name="periodoNomina_ID" />
+      </key>
+      <one-to-many class="SemaforoCalculoNomina" />
+    </bag>
+    <bag name="semaforoTimbradoPac" inverse="true" generic="true">
+      <key>
+        <column name="periodoNomina_ID" />
+      </key>
+      <one-to-many class="SemaforoTimbradoPac" />
+    </bag>
+    <bag name="vacacionesDisfrutadas_periodoAplicacion_ID" inverse="true" generic="true">
+      <key>
+        <column name="periodoAplicacion_ID" />
+      </key>
+      <one-to-many class="VacacionesDisfrutadas" />
+    </bag>
+ 
+    <bag name="vacacionesDisfrutadas_periodoPago_ID" inverse="true" generic="true">
+      <key>
+        <column name="periodoPago_ID" />
+      </key>
+      <one-to-many class="VacacionesDisfrutadas" />
+    </bag>
+  </class>
+</hibernate-mapping>

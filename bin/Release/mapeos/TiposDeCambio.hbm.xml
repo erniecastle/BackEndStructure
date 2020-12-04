@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="TiposDeCambio" table="TiposDeCambio" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="fecha" type="DateTime">
+      <column name="fecha" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="valor" type="Double">
+      <column name="valor" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="monedas" class="Monedas">
+      <column name="monedas_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Apariencia" table="Apariencia" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="controlApariencia" type="Int32">
+      <column name="controlApariencia" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tema" type="Int32">
+      <column name="tema" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="iconos" type="Int32">
+      <column name="iconos" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="permiteUsuarioTema" type="Boolean">
+      <column name="permiteUsuarioTema" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="permiteUsuarioIconos" type="Boolean">
+      <column name="permiteUsuarioIconos" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="mostrarBordes" type="Boolean">
+      <column name="mostrarBordes" not-null="true" sql-type="BIT" />
+    </property>
+  </class>
+</hibernate-mapping>

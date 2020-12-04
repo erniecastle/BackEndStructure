@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Contactos" table="Contactos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="email" type="String">
+      <column name="email" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="extencion_fax" type="String">
+      <column name="extencion_fax" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="extencion_telefono" type="String">
+      <column name="extencion_telefono" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fax" type="String">
+      <column name="fax" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="movil" type="String">
+      <column name="movil" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="puesto" type="String">
+      <column name="puesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="telefono" type="String">
+      <column name="telefono" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="bancos" class="Bancos">
+      <column name="bancos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

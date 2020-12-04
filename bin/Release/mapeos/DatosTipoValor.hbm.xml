@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="DatosTipoValor" table="DatosTipoValor" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="desde" type="String">
+      <column name="desde" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="hasta" type="String">
+      <column name="hasta" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="valor" type="String">
+      <column name="valor" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <bag name="tipoDeRedondeo" table="TipoDeRedondeo_DatosTipoValor"  inverse="true" generic="true">
+      <key>
+        <column name="datosTipoValor_Id" />
+      </key>
+      <many-to-many class="TipoDeRedondeo" fetch="join">
+        <column name="TipoDeRedondeo_id" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

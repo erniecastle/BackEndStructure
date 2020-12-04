@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PersonalizacionCorreo" table="PersonalizacionCorreo" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="tipoArchivo" type="Int32">
+      <column name="tipoArchivo" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="asunto" type="String">
+      <column name="asunto" not-null="false" length="255" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="texto" type="String">
+      <column name="texto" not-null="false" length="3333" sql-type="VARCHAR(MAX)" />
+    </property>
+    <many-to-one name="configuracionCorreo" class="ConfiguracionCorreo" lazy="false">
+      <column name="configuracionCorreo_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

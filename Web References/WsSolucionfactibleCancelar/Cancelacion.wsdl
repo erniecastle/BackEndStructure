@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax27="http://response.cancelacion.commons.timbrado.solucionfactible.com/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax25="http://binding.soap.cancelacion.commons.cfdi.solucionfactible.com/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://ws.cfdi.solucionfactible.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax29="http://ws.cfdi.solucionfactible.com/xsd" targetNamespace="http://ws.cfdi.solucionfactible.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Cancelacion</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax26="http://binding.soap.cancelacion.commons.cfdi.solucionfactible.com/xsd" xmlns:ax28="http://response.cancelacion.commons.timbrado.solucionfactible.com/xsd" xmlns:ax210="http://ws.cfdi.solucionfactible.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.cfdi.solucionfactible.com">
+      <xs:import namespace="http://binding.soap.cancelacion.commons.cfdi.solucionfactible.com/xsd" />
+      <xs:import namespace="http://response.cancelacion.commons.timbrado.solucionfactible.com/xsd" />
+      <xs:import namespace="http://ws.cfdi.solucionfactible.com/xsd" />
+      <xs:element name="cancelar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="derCertCSD" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="derKeyCSD" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="contrasenaCSD" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="ax26:KeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax28:StatusCancelacionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="enviarSolicitudCancelacion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="solicitud" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="ax26:KeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="enviarSolicitudCancelacionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax28:StatusCancelacionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelarSectorPrimario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelarSectorPrimarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax28:StatusCancelacionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelarAsincrono">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="emailNotifica" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="csdCer" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="csdKey" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="csdPassword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="ax26:KeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelarAsincronoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax210:CancelacionAsincronoResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStatusCancelacionAsincrona">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="ax26:KeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStatusCancelacionAsincronaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax28:StatusCancelacionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="enviarSolicitudCancelacionAsincrono">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="solicitud" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="emailNotifica" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="ax26:KeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="enviarSolicitudCancelacionAsincronoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax210:CancelacionAsincronoResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.cancelacion.commons.timbrado.solucionfactible.com/xsd">
+      <xs:complexType name="StatusCancelacionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acuseSat" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://binding.soap.cancelacion.commons.cfdi.solucionfactible.com/xsd">
+      <xs:complexType name="KeyValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.cfdi.solucionfactible.com/xsd">
+      <xs:complexType name="CancelacionAsincronoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getStatusCancelacionAsincronaRequest">
+    <wsdl:part name="parameters" element="ns:getStatusCancelacionAsincrona" />
+  </wsdl:message>
+  <wsdl:message name="getStatusCancelacionAsincronaResponse">
+    <wsdl:part name="parameters" element="ns:getStatusCancelacionAsincronaResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelarSectorPrimarioRequest">
+    <wsdl:part name="parameters" element="ns:cancelarSectorPrimario" />
+  </wsdl:message>
+  <wsdl:message name="cancelarSectorPrimarioResponse">
+    <wsdl:part name="parameters" element="ns:cancelarSectorPrimarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarSolicitudCancelacionAsincronoRequest">
+    <wsdl:part name="parameters" element="ns:enviarSolicitudCancelacionAsincrono" />
+  </wsdl:message>
+  <wsdl:message name="enviarSolicitudCancelacionAsincronoResponse">
+    <wsdl:part name="parameters" element="ns:enviarSolicitudCancelacionAsincronoResponse" />
+  </wsdl:message>
+  <wsdl:message name="enviarSolicitudCancelacionRequest">
+    <wsdl:part name="parameters" element="ns:enviarSolicitudCancelacion" />
+  </wsdl:message>
+  <wsdl:message name="enviarSolicitudCancelacionResponse">
+    <wsdl:part name="parameters" element="ns:enviarSolicitudCancelacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelarRequest">
+    <wsdl:part name="parameters" element="ns:cancelar" />
+  </wsdl:message>
+  <wsdl:message name="cancelarResponse">
+    <wsdl:part name="parameters" element="ns:cancelarResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelarAsincronoRequest">
+    <wsdl:part name="parameters" element="ns:cancelarAsincrono" />
+  </wsdl:message>
+  <wsdl:message name="cancelarAsincronoResponse">
+    <wsdl:part name="parameters" element="ns:cancelarAsincronoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CancelacionPortType">
+    <wsdl:operation name="getStatusCancelacionAsincrona">
+      <wsdl:input wsaw:Action="urn:getStatusCancelacionAsincrona" message="ns:getStatusCancelacionAsincronaRequest" />
+      <wsdl:output wsaw:Action="urn:getStatusCancelacionAsincronaResponse" message="ns:getStatusCancelacionAsincronaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelarSectorPrimario">
+      <wsdl:input wsaw:Action="urn:cancelarSectorPrimario" message="ns:cancelarSectorPrimarioRequest" />
+      <wsdl:output wsaw:Action="urn:cancelarSectorPrimarioResponse" message="ns:cancelarSectorPrimarioResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacionAsincrono">
+      <wsdl:input wsaw:Action="urn:enviarSolicitudCancelacionAsincrono" message="ns:enviarSolicitudCancelacionAsincronoRequest" />
+      <wsdl:output wsaw:Action="urn:enviarSolicitudCancelacionAsincronoResponse" message="ns:enviarSolicitudCancelacionAsincronoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacion">
+      <wsdl:input wsaw:Action="urn:enviarSolicitudCancelacion" message="ns:enviarSolicitudCancelacionRequest" />
+      <wsdl:output wsaw:Action="urn:enviarSolicitudCancelacionResponse" message="ns:enviarSolicitudCancelacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <wsdl:input wsaw:Action="urn:cancelar" message="ns:cancelarRequest" />
+      <wsdl:output wsaw:Action="urn:cancelarResponse" message="ns:cancelarResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelarAsincrono">
+      <wsdl:input wsaw:Action="urn:cancelarAsincrono" message="ns:cancelarAsincronoRequest" />
+      <wsdl:output wsaw:Action="urn:cancelarAsincronoResponse" message="ns:cancelarAsincronoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CancelacionSoap11Binding" type="ns:CancelacionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getStatusCancelacionAsincrona">
+      <soap:operation soapAction="urn:getStatusCancelacionAsincrona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarSectorPrimario">
+      <soap:operation soapAction="urn:cancelarSectorPrimario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacionAsincrono">
+      <soap:operation soapAction="urn:enviarSolicitudCancelacionAsincrono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <soap:operation soapAction="urn:cancelar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacion">
+      <soap:operation soapAction="urn:enviarSolicitudCancelacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarAsincrono">
+      <soap:operation soapAction="urn:cancelarAsincrono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CancelacionSoap12Binding" type="ns:CancelacionPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getStatusCancelacionAsincrona">
+      <soap12:operation soapAction="urn:getStatusCancelacionAsincrona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarSectorPrimario">
+      <soap12:operation soapAction="urn:cancelarSectorPrimario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacionAsincrono">
+      <soap12:operation soapAction="urn:enviarSolicitudCancelacionAsincrono" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <soap12:operation soapAction="urn:cancelar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacion">
+      <soap12:operation soapAction="urn:enviarSolicitudCancelacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarAsincrono">
+      <soap12:operation soapAction="urn:cancelarAsincrono" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CancelacionHttpBinding" type="ns:CancelacionPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getStatusCancelacionAsincrona">
+      <http:operation location="Cancelacion/getStatusCancelacionAsincrona" />
+      <wsdl:input>
+        <mime:content part="getStatusCancelacionAsincrona" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getStatusCancelacionAsincrona" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarSectorPrimario">
+      <http:operation location="Cancelacion/cancelarSectorPrimario" />
+      <wsdl:input>
+        <mime:content part="cancelarSectorPrimario" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="cancelarSectorPrimario" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacionAsincrono">
+      <http:operation location="Cancelacion/enviarSolicitudCancelacionAsincrono" />
+      <wsdl:input>
+        <mime:content part="enviarSolicitudCancelacionAsincrono" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="enviarSolicitudCancelacionAsincrono" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelar">
+      <http:operation location="Cancelacion/cancelar" />
+      <wsdl:input>
+        <mime:content part="cancelar" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="cancelar" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarSolicitudCancelacion">
+      <http:operation location="Cancelacion/enviarSolicitudCancelacion" />
+      <wsdl:input>
+        <mime:content part="enviarSolicitudCancelacion" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="enviarSolicitudCancelacion" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarAsincrono">
+      <http:operation location="Cancelacion/cancelarAsincrono" />
+      <wsdl:input>
+        <mime:content part="cancelarAsincrono" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="cancelarAsincrono" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Cancelacion">
+    <wsdl:port name="CancelacionHttpsSoap11Endpoint" binding="ns:CancelacionSoap11Binding">
+      <soap:address location="https://solucionfactible.com/ws/services/Cancelacion.CancelacionHttpsSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="CancelacionHttpsSoap12Endpoint" binding="ns:CancelacionSoap12Binding">
+      <soap12:address location="https://solucionfactible.com/ws/services/Cancelacion.CancelacionHttpsSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="CancelacionHttpsEndpoint" binding="ns:CancelacionHttpBinding">
+      <http:address location="https://solucionfactible.com/ws/services/Cancelacion.CancelacionHttpsEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

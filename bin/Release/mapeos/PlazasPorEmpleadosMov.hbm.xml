@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2"   >
+  <class name="PlazasPorEmpleadosMov" table="PlazasPorEmpleadosMov" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="cambioCentroDeCostos" type="Boolean">
+      <column name="cambioCentroDeCostos" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioDepartamento" type="Boolean">
+      <column name="cambioDepartamento" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioHoras" type="Boolean">
+      <column name="cambioHoras" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioPlazasPosOrganigrama" type="Boolean">
+      <column name="cambioPlazasPosOrganigrama" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioPuestos" type="Boolean">
+      <column name="cambioPuestos" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioRegimenContratacion" type="Boolean">
+      <column name="cambioRegimenContratacion" not-null="true" sql-type="BIT" />
+    </property>
+     <property name="cambioTipoSalario" type="Boolean">
+      <column name="cambioTipoSalario" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioSalario" type="Boolean">
+      <column name="cambioSalario" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioTipoContrato" type="Boolean">
+      <column name="cambioTipoContrato" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioSindicalizado" type="Boolean">
+      <column name="cambioSindicalizado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioJornada" type="Boolean">
+      <column name="cambioJornada" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioTipoDeNomina" type="Boolean">
+      <column name="cambioTipoDeNomina" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioTipoRelacionLaboral" type="Boolean">
+      <column name="cambioTipoRelacionLaboral" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="cambioTurno" type="Boolean">
+      <column name="cambioTurno" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="fechaIMSS" type="DateTime">
+      <column name="fechaIMSS" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaInicial" type="DateTime">
+      <column name="fechaInicial" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horas" type="Int32">
+      <column name="horas" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="importe" type="Double">
+      <column name="importe" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="regimenContratacion" type="String">
+      <column name="regimenContratacion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoRelacionLaboral" type="Int32">
+      <column name="tipoRelacionLaboral" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="sindicalizado" type="Boolean">
+      <column name="sindicalizado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="salarioPor" type="Int32">
+      <column name="salarioPor" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="centroDeCosto" class="CentroDeCosto"   fetch="join">
+      <column name="centroDeCosto_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="departamentos" class="Departamentos" fetch="join">
+      <column name="departamentos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <!--<many-to-one name="formasDePago" class="FormasDePago">
+      <column name="formasDePago_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>-->
+    <many-to-one name="plazas" class="Plazas" fetch="join">
+      <column name="plazas_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="plazasPorEmpleado" class="PlazasPorEmpleado" fetch="join">
+      <column name="plazasPorEmpleado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoContrato" class="TipoContrato" fetch="join">
+      <column name="tipoContrato_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="jornada" class="Jornada" fetch="join">
+      <column name="jornada_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina" class="TipoNomina" fetch="join">
+      <column name="tipoNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="turnos" class="Turnos" fetch="join">
+      <column name="turnos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="puestos" class="Puestos" fetch="join">
+      <column name="puestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="cfdiEmpleado" inverse="true" generic="true" lazy="false" >
+      <key>
+        <column name="plazaPorEmpleadoMov_ID" />
+      </key>
+      <one-to-many class="CFDIEmpleado" />
+    </bag>
+    <bag name="inasistenciaPorHora" inverse="true" generic="true" lazy="false" >
+      <key>
+        <column name="plazasPorEmpleadosMov_ID" />
+      </key>
+      <one-to-many class="InasistenciaPorHora" />
+    </bag>
+  </class>
+</hibernate-mapping>

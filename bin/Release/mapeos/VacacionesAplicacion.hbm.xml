@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="VacacionesAplicacion" table="VacacionesAplicacion" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="diasPrima" type="Double">
+      <column name="diasPrima" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasVac" type="Int32">
+      <column name="diasVac" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="vacacionesDevengadas" class="VacacionesDevengadas">
+      <column name="vacacionesDevengadas_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="vacacionesDisfrutadas" class="VacacionesDisfrutadas">
+      <column name="vacacionesDisfrutadas_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

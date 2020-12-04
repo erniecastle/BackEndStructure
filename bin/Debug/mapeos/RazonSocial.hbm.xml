@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RazonSocial" table="RazonSocial" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="claveRazonSocial" type="String">
+      <column name="claveRazonSocial" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="nombreRazonSocial" type="String">
+      <column name="nombreRazonSocial" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <bag name="contenedor" inverse="true" generic="true">
+      <key>
+        <column name="razonSocial_ID" />
+      </key>
+      <one-to-many class="Contenedor" />
+    </bag>
+    <bag name="razonSocialConfiguracion" inverse="true" generic="true">
+      <key>
+        <column name="razonSocial_ID" />
+      </key>
+      <one-to-many class="RazonSocialConfiguracion" />
+    </bag>
+    <bag name="reporteDinamico" inverse="true" generic="true">
+      <key>
+        <column name="razonSocial_ID" />
+      </key>
+      <one-to-many class="ReporteDinamico" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Usuario" table="Usuario" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="activaFechaEx" type="Boolean">
+      <column name="activaFechaEx" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="email" type="String">
+      <column name="email" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="fechaExpiracion" type="DateTime">
+      <column name="fechaExpiracion" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="idioma" type="Int32">
+      <column name="idioma" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="lastConfig" type="String">
+      <column name="lastConfig" not-null="true" length="255" sql-type="VARCHAR(MAX)" />
+    </property>
+    <property name="password" type="String">
+      <column name="password" not-null="true" length="40" sql-type="VARCHAR(40)" />
+    </property>
+    <many-to-one name="perfiles" class="Perfiles">
+      <column name="perfiles_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <bag name="externoPersonalizado" inverse="true" generic="true">
+      <key>
+        <column name="usuario_ID" />
+      </key>
+      <one-to-many class="ExternoPersonalizado" />
+    </bag>
+    <bag name="herramientaPersonalizada" inverse="true" generic="true">
+      <key>
+        <column name="usuario_ID" />
+      </key>
+      <one-to-many class="HerramientaPersonalizada" />
+    </bag>
+    <bag name="permisos" inverse="true" generic="true">
+      <key>
+        <column name="usuario_ID" />
+      </key>
+      <one-to-many class="Permisos" />
+    </bag>
+    <bag name="razonSocialConfiguracion" inverse="true" generic="true">
+      <key>
+        <column name="usuario_ID" />
+      </key>
+      <one-to-many class="RazonSocialConfiguracion" />
+    </bag>
+  </class>
+</hibernate-mapping>

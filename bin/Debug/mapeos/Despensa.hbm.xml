@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Despensa" table="Despensa" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="condicionesPagos" type="String">
+      <column name="condicionesPagos" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="diasMes" type="Int32">
+      <column name="diasMes" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="importeDias" type="Double">
+      <column name="importeDias" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="importeHoras" type="Double">
+      <column name="importeHoras" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="pagoDias" type="Int32">
+      <column name="pagoDias" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="pagoHoras" type="Int32">
+      <column name="pagoHoras" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="periodicidadPago" type="Int32">
+      <column name="periodicidadPago" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="retencionISR" type="Int32">
+      <column name="retencionISR" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="vigencia" type="DateTime">
+      <column name="vigencia" not-null="false" sql-type="DATETIME" />
+    </property>
+    <bag name="baseNomina" table="Despensa_BaseNomina"  inverse="true" generic="true">
+      <key>
+        <column name="Despensa_id" />
+      </key>
+      <many-to-many class="BaseNomina" fetch="join">
+        <column name="basesNomina_Id" />
+      </many-to-many>
+    </bag>
+    <bag name="incidencias" table="Despensa_Incidencias"  inverse="true" generic="true">
+      <key>
+        <column name="Despensa_id" />
+      </key>
+      <many-to-many class="Incidencias" fetch="join">
+        <column name="incidencias_Id" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Puestos" table="Puestos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionPrevia" type="String">
+      <column name="descripcionPrevia" not-null="true" length="20" sql-type="VARCHAR(20)" />
+    </property>
+    <property name="directivo" type="Boolean">
+      <column name="directivo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="funciones" type="String">
+      <column name="funciones" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="maximo" type="Double">
+      <column name="maximo" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="minimo" type="Double">
+      <column name="minimo" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="salarioTabular" type="Double">
+      <column name="salarioTabular" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="categoriasPuestos" class="CategoriasPuestos" lazy="false">
+      <column name="categoriasPuestos_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="registroPatronal" class="RegistroPatronal" lazy="false">
+      <column name="registroPatronal_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="experienciaLaboralInterna" inverse="true" generic="true">
+      <key>
+        <column name="puestos_ID" />
+      </key>
+      <one-to-many class="ExperienciaLaboralInterna" />
+    </bag>
+    <bag name="percepcionesFijas" inverse="true" generic="true">
+      <key>
+        <column name="puestos_ID" />
+      </key>
+      <one-to-many class="PercepcionesFijas" />
+    </bag>
+    <bag name="plazas" inverse="true" generic="true">
+      <key>
+        <column name="puestos_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="plazasPorEmpleadosMov" inverse="true" generic="true">
+      <key>
+        <column name="puestos_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleadosMov" />
+    </bag>
+    <bag name="ptuEmpleados" inverse="true" generic="true">
+      <key>
+        <column name="puestos_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Familiares" table="Familiares" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="dependiente" type="Boolean">
+      <column name="dependiente" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="empleado" type="Boolean">
+      <column name="empleado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="fechaNacimiento" type="DateTime">
+      <column name="fechaNacimiento" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="finado" type="Boolean">
+      <column name="finado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="sexo" type="Boolean">
+      <column name="sexo" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="parentesco" class="Parentesco">
+      <column name="parentesco_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

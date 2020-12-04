@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ContenedorPersonalizado" table="ContenedorPersonalizado">
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="ordenId" type="Int32">
+      <column name="ordenId" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="contenedor" class="Contenedor">
+      <column name="contenedor_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="herramientaPersonalizada" class="HerramientaPersonalizada">
+      <column name="herramientaPersonalizada_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="perfiles" class="Perfiles">
+      <column name="perfil_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

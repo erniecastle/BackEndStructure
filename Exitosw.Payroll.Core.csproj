@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F430A2FA-AA37-4185-9F3C-0430110AD62F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Exitosw.Payroll.Core</RootNamespace>
+    <AssemblyName>Exitosw.Payroll.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\LibExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.8.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.2.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.2.5\lib\net461\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Core, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spring.Web, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Web.2.0.1\lib\net45\Spring.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Controls.Win.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Data, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Database, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Database.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Design, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Editor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Map, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Map.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Report.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Report.Check.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Report.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Stimulsoft.Report.Helper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Report.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2020.5.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Net.2020.5.1\lib\net45\Stimulsoft.Report.Win.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Svg, Version=2.4.3.29446, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stimulsoft.Reports.Engine.2020.5.1\lib\net45\Svg.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CFDI\Comprobante.cs" />
+    <Compile Include="CFDI\ConstruyeComprobanteV33.cs" />
+    <Compile Include="CFDI\ConstruyeNomina12.cs" />
+    <Compile Include="CFDI\ConstruyeTimbreFiscalDigital11.cs" />
+    <Compile Include="CFDI\nomina12.cs" />
+    <Compile Include="CFDI\PACS\SolucionFactible.cs" />
+    <Compile Include="CFDI\Sat.Catalogos\CMetodoPago.cs" />
+    <Compile Include="CFDI\Sat.Catalogos\CMoneda.cs" />
+    <Compile Include="CFDI\Sat.Catalogos\CTipoDeComprobante.cs" />
+    <Compile Include="CFDI\Sat.Catalogos\CTipoNomina.cs" />
+    <Compile Include="CFDI\Sat.Catalogos\CUsoCFDI.cs" />
+    <Compile Include="CFDI\Timbrado\cUUIDCancelado.cs" />
+    <Compile Include="CFDI\Timbrado\DatosTimbreFiscalDigital.cs" />
+    <Compile Include="CFDI\Timbrado\InfoATimbrar.cs" />
+    <Compile Include="CFDI\Timbrado\InfoExtra.cs" />
+    <Compile Include="CFDI\Timbrado\TipoOperacionWS.cs" />
+    <Compile Include="CFDI\TimbrarXmlSat.cs" />
+    <Compile Include="CFDI\TimbreFiscalDigitalv11.cs" />
+    <Compile Include="modeloHB\EnvioCorreoHDAO.cs" />
+    <Compile Include="modeloHB\EnvioCorreoHDAOIF.cs" />
+    <Compile Include="modeloHB\ReportesDAO.cs" />
+    <Compile Include="modeloHB\ReportesDAOIF.cs" />
+    <Compile Include="modelo\BitCancelacionDAO.cs" />
+    <Compile Include="modelo\BitCancelacionDAOIF.cs" />
+    <Compile Include="modelo\CertificadosDAO.cs" />
+    <Compile Include="modelo\CertificadosDAOIF.cs" />
+    <Compile Include="modelo\CFDIReciboProcCancDAOIF.cs" />
+    <Compile Include="modelo\CFDIReciboProcCancDAO.cs" />
+    <Compile Include="modelo\AparienciaDAO.cs" />
+    <Compile Include="modelo\AparienciaDAOIF.cs" />
+    <Compile Include="modelo\CausaDeBajaDAO.cs" />
+    <Compile Include="modelo\CausaDeBajaDAOIF.cs" />
+    <Compile Include="modelo\PersonalizacionCorreoDAO.cs" />
+    <Compile Include="modelo\PersonalizacionCorreoDAOIF.cs" />
+    <Compile Include="genericos\campos\CamposFrom.cs" />
+    <Compile Include="genericos\campos\CamposGrupo.cs" />
+    <Compile Include="genericos\campos\CamposJoin.cs" />
+    <Compile Include="genericos\campos\CamposOrden.cs" />
+    <Compile Include="genericos\campos\CamposSelect.cs" />
+    <Compile Include="genericos\campos\CamposWhere.cs" />
+    <Compile Include="genericos\campos\OperadorComparacion.cs" />
+    <Compile Include="genericos\campos\OperadorLogico.cs" />
+    <Compile Include="genericos\campos\OperadorSelect.cs" />
+    <Compile Include="genericos\campos\SubConsulta.cs" />
+    <Compile Include="genericos\campos\TipoBD.cs" />
+    <Compile Include="genericos\campos\TipoFuncion.cs" />
+    <Compile Include="genericos\campos\TipoJoin.cs" />
+    <Compile Include="genericos\campos\TipoOperacion.cs" />
+    <Compile Include="genericos\campos\TipoOrden.cs" />
+    <Compile Include="genericos\campos\TipoResultado.cs" />
+    <Compile Include="genericos\campos\ValoresRango.cs" />
+    <Compile Include="genericos\DatosQuery.cs" />
+    <Compile Include="genericos\GeneradorQueries.cs" />
+    <Compile Include="metodosCalculoNomina\EntidadesVacaciones.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosBDMaestra.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosDatosAsistencias.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosDatosEmpleados.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosParaMovimientosNomina.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosParaPtu.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosParaVacaciones.cs" />
+    <Compile Include="metodosCalculoNomina\MetodosPeriodosNomina.cs" />
+    <Compile Include="metodosCalculoNomina\TipoMostrarCampo.cs" />
+    <Compile Include="modeloHB\MovimientosNominaHDAO.cs" />
+    <Compile Include="modeloHB\MovimientosNominaHDAOIF.cs" />
+    <Compile Include="modeloHB\VacacionesAplicacionHDAO.cs" />
+    <Compile Include="modeloHB\VacacionesAplicacionHDAOIF.cs" />
+    <Compile Include="modeloHB\VacacionesDevengadasHDAO.cs" />
+    <Compile Include="modeloHB\VacacionesDevengadasHDAOIF.cs" />
+    <Compile Include="modeloHB\VacacionesDisfrutadasHDAO.cs" />
+    <Compile Include="modeloHB\VacacionesDisfrutadasHDAOIF.cs" />
+    <Compile Include="modelo\AguinaldoFechasDAO.cs" />
+    <Compile Include="modelo\AguinaldoFechasDAOIF.cs" />
+    <Compile Include="modelo\AguinaldoPagosDAO.cs" />
+    <Compile Include="modelo\AguinaldoPagosDAOIF.cs" />
+    <Compile Include="modelo\AsignaTipoReporteDAO.cs" />
+    <Compile Include="modelo\AsignaTipoReporteDAOIF.cs" />
+    <Compile Include="modelo\AsistenciasDAO.cs" />
+    <Compile Include="modelo\AsistenciasDAOIF.cs" />
+    <Compile Include="modelo\BancosDAO.cs" />
+    <Compile Include="modelo\BancosDAOIF.cs" />
+    <Compile Include="modelo\BaseAfectadaConceptoNominaDAO.cs" />
+    <Compile Include="modelo\BaseAfectadaConceptoNominaDAOIF.cs" />
+    <Compile Include="modelo\BaseAfectadaGrupoDAO.cs" />
+    <Compile Include="modelo\BaseAfectadaGrupoDAOIF.cs" />
+    <Compile Include="modelo\BaseNominaDAO.cs" />
+    <Compile Include="modelo\BaseNominaDAOIF.cs" />
+    <Compile Include="modelo\CalculaNominaDAO.cs" />
+    <Compile Include="modelo\CalculaNominaDAOIF.cs" />
+    <Compile Include="modelo\CalculoNominaHDAO.cs" />
+    <Compile Include="modelo\CalculoNominaHIF.cs" />
+    <Compile Include="modelo\CalculoPtuDAO.cs" />
+    <Compile Include="modelo\CalculoPtuDAOIF.cs" />
+    <Compile Include="modelo\CampoDIMDAO.cs" />
+    <Compile Include="modelo\CampoDIMDAOIF.cs" />
+    <Compile Include="modelo\CamposDimConceptosDAO.cs" />
+    <Compile Include="modelo\CamposDimConceptosDAOIF.cs" />
+    <Compile Include="modelo\CamposOrigenDatosDAO.cs" />
+    <Compile Include="modelo\CamposOrigenDatosDAOIF.cs" />
+    <Compile Include="modelo\CapacitacionesDAO.cs" />
+    <Compile Include="modelo\CapacitacionesDAOIF.cs" />
+    <Compile Include="modelo\CategoriasPuestosDAO.cs" />
+    <Compile Include="modelo\CategoriasPuestosDAOIF.cs" />
+    <Compile Include="modelo\CentroDeCostoDAO.cs" />
+    <Compile Include="modelo\CentroDeCostoDAOIF.cs" />
+    <Compile Include="modelo\CFDIEmpleadoDAO.cs" />
+    <Compile Include="modelo\CFDIEmpleadoDAOH.cs" />
+    <Compile Include="modelo\CFDIEmpleadoDAOIF.cs" />
+    <Compile Include="modelo\CFDIEmpleadoDAOIFH.cs" />
+    <Compile Include="modelo\CFDIReciboDAO.cs" />
+    <Compile Include="modelo\CFDIReciboDAOIF.cs" />
+    <Compile Include="modelo\CiudadesDAO.cs" />
+    <Compile Include="modelo\CiudadesDAOIF.cs" />
+    <Compile Include="modelo\ConcepNomDefiDAO.cs" />
+    <Compile Include="modelo\ConcepNomDefiDAOIF.cs" />
+    <Compile Include="modelo\ConceptoDeNominaDAO.cs" />
+    <Compile Include="modelo\ConceptoDeNominaDAOIF.cs" />
+    <Compile Include="modelo\ConceptoPorTipoCorridaDAO.cs" />
+    <Compile Include="modelo\ConceptoPorTipoCorridaDAOIF.cs" />
+    <Compile Include="modelo\ConceptosEspecialesDAO.cs" />
+    <Compile Include="modelo\ConceptosEspecialesDAOIF.cs" />
+    <Compile Include="modelo\ConfigConceptosSatDAO.cs" />
+    <Compile Include="modelo\ConfigConceptosSatDAOIF.cs" />
+    <Compile Include="modelo\ConfigFoliacionDAO.cs" />
+    <Compile Include="modelo\ConfigFoliacionDAOIF.cs" />
+    <Compile Include="modelo\ConfigMascarasDAO.cs" />
+    <Compile Include="modelo\ConfigMascarasDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionAguinaldoDAO.cs" />
+    <Compile Include="modelo\ConfiguracionAguinaldoDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionAsistenciasDAO.cs" />
+    <Compile Include="modelo\ConfiguracionAsistenciasDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionCapturasDAO.cs" />
+    <Compile Include="modelo\ConfiguracionCapturasDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionCapturasProcesoDAO.cs" />
+    <Compile Include="modelo\ConfiguracionCapturasProcesoDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionIMSSDAO.cs" />
+    <Compile Include="modelo\ConfiguracionIMSSDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionNivelCuentaDAO.cs" />
+    <Compile Include="modelo\ConfiguracionNivelCuentaDAOIF.cs" />
+    <Compile Include="modelo\ConfiguraMovimientoDAO.cs" />
+    <Compile Include="modelo\ConfiguraMovimientoDAOIF.cs" />
+    <Compile Include="modelo\ConfiguraTimbradoDAO.cs" />
+    <Compile Include="modelo\ConfiguraTimbradoDAOIF.cs" />
+    <Compile Include="modelo\ConsultaGenericaDAO.cs" />
+    <Compile Include="modelo\ConsultaGenericaDAOIF.cs" />
+    <Compile Include="modelo\ConsultaGenericaEspecialesDAO.cs" />
+    <Compile Include="modelo\ConsultaGenericaEspecialesDAOIF.cs" />
+    <Compile Include="modelo\ConsultaGenericaEspecialesHDAO.cs" />
+    <Compile Include="modelo\ConsultaGenericaEspecialesHDAOIF.cs" />
+    <Compile Include="modelo\ContactosDAO.cs" />
+    <Compile Include="modelo\ContactosDAOIF.cs" />
+    <Compile Include="modelo\ContenedorDAO.cs" />
+    <Compile Include="modelo\ContenedorDAOIF.cs" />
+    <Compile Include="modelo\ContenedorPersonalizadoDAO.cs" />
+    <Compile Include="modelo\ContenedorPersonalizadoDAOIF.cs" />
+    <Compile Include="modelo\ConfiguracionCorreoDAO.cs" />
+    <Compile Include="modelo\ConfiguracionCorreoDAOIF.cs" />
+    <Compile Include="modelo\CpDAO.cs" />
+    <Compile Include="modelo\CpDAOIF.cs" />
+    <Compile Include="modelo\CreditoAhorroDAO.cs" />
+    <Compile Include="modelo\CreditoAhorroDAOIF.cs" />
+    <Compile Include="modelo\CreditoMovimientosDAO.cs" />
+    <Compile Include="modelo\CreditoMovimientosDAOIF.cs" />
+    <Compile Include="modelo\CreditoPorEmpleadoDAO.cs" />
+    <Compile Include="modelo\CreditoPorEmpleadoDAOIF.cs" />
+    <Compile Include="modelo\CruceDAO.cs" />
+    <Compile Include="modelo\CruceDAOIF.cs" />
+    <Compile Include="modelo\CuentasContablesDAO.cs" />
+    <Compile Include="modelo\CuentasContablesDAOIF.cs" />
+    <Compile Include="modelo\CursosDAO.cs" />
+    <Compile Include="modelo\CursosDAOIF.cs" />
+    <Compile Include="modelo\DepartamentosDAO.cs" />
+    <Compile Include="modelo\DepartamentosDAOIF.cs" />
+    <Compile Include="modelo\DespensaDAO.cs" />
+    <Compile Include="modelo\DespensaDAOIF.cs" />
+    <Compile Include="modelo\DiasAguinaldoDAO.cs" />
+    <Compile Include="modelo\DiasAguinaldoDAOIF.cs" />
+    <Compile Include="modelo\DocumentacionDAO.cs" />
+    <Compile Include="modelo\DocumentacionDAOIF.cs" />
+    <Compile Include="modelo\ElementoExternoDAO.cs" />
+    <Compile Include="modelo\ElementoExternoDAOIF.cs" />
+    <Compile Include="modelo\ElementosAplicacionDAO.cs" />
+    <Compile Include="modelo\ElementosAplicacionDAOIF.cs" />
+    <Compile Include="modelo\EmpleadosDAO.cs" />
+    <Compile Include="modelo\EmpleadosDAOIF.cs" />
+    <Compile Include="modelo\EntityGenericoRepository.cs" />
+    <Compile Include="modelo\EstadosDAO.cs" />
+    <Compile Include="modelo\EstadosDAOIF.cs" />
+    <Compile Include="modelo\EstrucCuentaDAO.cs" />
+    <Compile Include="modelo\EstrucCuentaDAOIF.cs" />
+    <Compile Include="modelo\EstudiosDAO.cs" />
+    <Compile Include="modelo\EstudiosDAOIF.cs" />
+    <Compile Include="modelo\ExcepcionesDAO.cs" />
+    <Compile Include="modelo\ExcepcionesDAOIF.cs" />
+    <Compile Include="modelo\ExperienciaLaboralExternaDAO.cs" />
+    <Compile Include="modelo\ExperienciaLaboralExternaDAOIF.cs" />
+    <Compile Include="modelo\ExperienciaLaboralInternaDAO.cs" />
+    <Compile Include="modelo\ExperienciaLaboralInternaDAOIF.cs" />
+    <Compile Include="modelo\ExternoPersonalizadoDAO.cs" />
+    <Compile Include="modelo\ExternoPersonalizadoDAOIF.cs" />
+    <Compile Include="modelo\FamiliaresDAO.cs" />
+    <Compile Include="modelo\FamiliaresDAOIF.cs" />
+    <Compile Include="modelo\FiniqLiquidCncNomDAO.cs" />
+    <Compile Include="modelo\FiniqLiquidCncNomDAOIF.cs" />
+    <Compile Include="modelo\FiniqLiquidPlazasDAO.cs" />
+    <Compile Include="modelo\FiniqLiquidPlazasDAOIF.cs" />
+    <Compile Include="modelo\FiniquitosLiquidacionesDAO.cs" />
+    <Compile Include="modelo\FiniquitosLiquidacionesDAOIF.cs" />
+    <Compile Include="modelo\FirmasDAO.cs" />
+    <Compile Include="modelo\FirmasDAOIF.cs" />
+    <Compile Include="modelo\FormacionAcademicaDAO.cs" />
+    <Compile Include="modelo\FormacionAcademicaDAOIF.cs" />
+    <Compile Include="modelo\FormasCapturaDAO.cs" />
+    <Compile Include="modelo\FormasCapturaDAOIF.cs" />
+    <Compile Include="modelo\FormasDePagoDAO.cs" />
+    <Compile Include="modelo\FormasDePagoDAOIF.cs" />
+    <Compile Include="modelo\FormatoCnxContaDAO.cs" />
+    <Compile Include="modelo\FormatoCnxContaDAOIF.cs" />
+    <Compile Include="modelo\FuenteDatosDAO.cs" />
+    <Compile Include="modelo\FuenteDatosDAOIF.cs" />
+    <Compile Include="modelo\GeneracionDatosTimbreDAO.cs" />
+    <Compile Include="modelo\GeneracionDatosTimbreDAOIF.cs" />
+    <Compile Include="modelo\GenerarReportesDAO.cs" />
+    <Compile Include="modelo\GenerarReportesDAOIF.cs" />
+    <Compile Include="modelo\GenerarTablasXml.cs" />
+    <Compile Include="modelo\GenericQueriesDAO.cs" />
+    <Compile Include="modelo\GenericQueriesDAOIF.cs" />
+    <Compile Include="modelo\GenericRepository.cs" />
+    <Compile Include="modelo\GeneroDAO.cs" />
+    <Compile Include="modelo\GeneroDAOIF.cs" />
+    <Compile Include="modelo\GruposDAO.cs" />
+    <Compile Include="modelo\GruposDAOIF.cs" />
+    <Compile Include="modelo\HerramientaDAO.cs" />
+    <Compile Include="modelo\HerramientaDAOIF.cs" />
+    <Compile Include="modelo\HerramientaPersonalizadaDAO.cs" />
+    <Compile Include="modelo\HerramientaPersonalizadaDAOIF.cs" />
+    <Compile Include="modelo\HorarioDAO.cs" />
+    <Compile Include="modelo\HorarioDAOIF.cs" />
+    <Compile Include="modelo\IEntityBase.cs" />
+    <Compile Include="modelo\IEntityGenericoRepository.cs" />
+    <Compile Include="modelo\IGenericRepository.cs" />
+    <Compile Include="modelo\ImportaCamposDAO.cs" />
+    <Compile Include="modelo\ImportaCamposDAOIF.cs" />
+    <Compile Include="modelo\InasistenciaPorHoraDAO.cs" />
+    <Compile Include="modelo\InasistenciaPorHoraDAOIF.cs" />
+    <Compile Include="modelo\IncidenciasDAO.cs" />
+    <Compile Include="modelo\IncidenciasDAOIF.cs" />
+    <Compile Include="modelo\IngresosBajasDAO.cs" />
+    <Compile Include="modelo\IngresosBajasDAOIF.cs" />
+    <Compile Include="modelo\ProcesosOrigenDAO.cs" />
+    <Compile Include="modelo\ProcesosOrigenDAOIF.cs" />
+    <Compile Include="modelo\RegimenContratacionDAO.cs" />
+    <Compile Include="modelo\RegimenContratacionDAOIF.cs" />
+    <Compile Include="modelo\SeriesDAO.cs" />
+    <Compile Include="modelo\SeriesDAOIF.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="servicios\Initializers\DefaultInitializer.cs" />
+    <Compile Include="modelo\JornadaDAO.cs" />
+    <Compile Include="modelo\JornadaDAOIF.cs" />
+    <Compile Include="modelo\ModuloDAO.cs" />
+    <Compile Include="modelo\ModuloDAOIF.cs" />
+    <Compile Include="modelo\MonedasDAO.cs" />
+    <Compile Include="modelo\MonedasDAOIF.cs" />
+    <Compile Include="modelo\MovimientosNominaDAO.cs" />
+    <Compile Include="modelo\MovimientosNominaDAOIF.cs" />
+    <Compile Include="modelo\MovNominaBaseAfectaDAO.cs" />
+    <Compile Include="modelo\MovNominaBaseAfectaDAOIF.cs" />
+    <Compile Include="modelo\MunicipiosDAO.cs" />
+    <Compile Include="modelo\MunicipiosDAOIF.cs" />
+    <Compile Include="modelo\NivelesClasificacionDAO.cs" />
+    <Compile Include="modelo\NivelesClasificacionDAOIF.cs" />
+    <Compile Include="modelo\PaisesDAO.cs" />
+    <Compile Include="modelo\PaisesDAOIF.cs" />
+    <Compile Include="modelo\ParametroConceptosDeNominaDAO.cs" />
+    <Compile Include="modelo\ParametroConceptosDeNominaDAOIF.cs" />
+    <Compile Include="modelo\ParametrosConsultaDAO.cs" />
+    <Compile Include="modelo\ParametrosConsultaDAOIF.cs" />
+    <Compile Include="modelo\ParametrosDAO.cs" />
+    <Compile Include="modelo\ParametrosDAOIF.cs" />
+    <Compile Include="modelo\ParentescoDAO.cs" />
+    <Compile Include="modelo\ParentescoDAOIF.cs" />
+    <Compile Include="modelo\PercepcionesFijasDAO.cs" />
+    <Compile Include="modelo\PercepcionesFijasDAOIF.cs" />
+    <Compile Include="modelo\PerfilDAO.cs" />
+    <Compile Include="modelo\PerfilDAOIF.cs" />
+    <Compile Include="modelo\PeriodicidadDAO.cs" />
+    <Compile Include="modelo\PeriodicidadDAOIF.cs" />
+    <Compile Include="modelo\PeriodosNominaDAO.cs" />
+    <Compile Include="modelo\PeriodosNominaDAOIF.cs" />
+    <Compile Include="modelo\PermisosDAO.cs" />
+    <Compile Include="modelo\PermisosDAOIF.cs" />
+    <Compile Include="modelo\PlazasDAO.cs" />
+    <Compile Include="modelo\PlazasDAOIF.cs" />
+    <Compile Include="modelo\PlazasPorEmpleadoDAO.cs" />
+    <Compile Include="modelo\PlazasPorEmpleadoDAOIF.cs" />
+    <Compile Include="modelo\PlazasPorEmpleadosMovDAO.cs" />
+    <Compile Include="modelo\PlazasPorEmpleadosMovDAOIF.cs" />
+    <Compile Include="modelo\PortalesDAO.cs" />
+    <Compile Include="modelo\PortalesDAOIF.cs" />
+    <Compile Include="modelo\PrimasDAO.cs" />
+    <Compile Include="modelo\PrimasDAOIF.cs" />
+    <Compile Include="modelo\PuestosDAO.cs" />
+    <Compile Include="modelo\PuestosDAOIF.cs" />
+    <Compile Include="modelo\RazonesSocialesDAO.cs" />
+    <Compile Include="modelo\RazonesSocialesDAOIF.cs" />
+    <Compile Include="modelo\RazonSocialConfiguracionDAO.cs" />
+    <Compile Include="modelo\RazonSocialConfiguracionDAOIF.cs" />
+    <Compile Include="modelo\RazonSocialDAO.cs" />
+    <Compile Include="modelo\RazonSocialDAOIF.cs" />
+    <Compile Include="modelo\RegistroIncapacidadDAO.cs" />
+    <Compile Include="modelo\RegistroIncapacidadDAOIF.cs" />
+    <Compile Include="modelo\RegistroPatronalDAO.cs" />
+    <Compile Include="modelo\RegistroPatronalDAOIF.cs" />
+    <Compile Include="modelo\ReporteDatosIncluirDAO.cs" />
+    <Compile Include="modelo\ReporteDatosIncluirDAOIF.cs" />
+    <Compile Include="modelo\ReporteDinamicoDAO.cs" />
+    <Compile Include="modelo\ReporteDinamicoDAOIF.cs" />
+    <Compile Include="modelo\ReporteEstilosDAO.cs" />
+    <Compile Include="modelo\ReporteEstilosDAOIF.cs" />
+    <Compile Include="modelo\ReporteFuenteDatosDAO.cs" />
+    <Compile Include="modelo\ReporteFuenteDatosDAOIF.cs" />
+    <Compile Include="modelo\ReporteOrdenGrupoDAO.cs" />
+    <Compile Include="modelo\ReporteOrdenGrupoDAOIF.cs" />
+    <Compile Include="modelo\SalariosIntegradosDAO.cs" />
+    <Compile Include="modelo\SalariosIntegradosDAOIF.cs" />
+    <Compile Include="modelo\SalariosIntegradosDetDAO.cs" />
+    <Compile Include="modelo\SalariosIntegradosDetDAOIF.cs" />
+    <Compile Include="modelo\SemaforoCalculoNominaDAO.cs" />
+    <Compile Include="modelo\SemaforoCalculoNominaDAOIF.cs" />
+    <Compile Include="modelo\SemaforoTimbradoPacDAO.cs" />
+    <Compile Include="modelo\SemaforoTimbradoPacDAOIF.cs" />
+    <Compile Include="modelo\SistemasDAO.cs" />
+    <Compile Include="modelo\SistemasDAOIF.cs" />
+    <Compile Include="modelo\TablaBaseDAO.cs" />
+    <Compile Include="modelo\TablaBaseDAOIF.cs" />
+    <Compile Include="modelo\TablaDatosDAO.cs" />
+    <Compile Include="modelo\TablaDatosDAOIF.cs" />
+    <Compile Include="modelo\TablaPersonalizadaDAO.cs" />
+    <Compile Include="modelo\TablaPersonalizadaDAOIF.cs" />
+    <Compile Include="modelo\TipoCentroCostosDAO.cs" />
+    <Compile Include="modelo\TipoCentroCostosDAOIF.cs" />
+    <Compile Include="modelo\TipoContratoDAO.cs" />
+    <Compile Include="modelo\TipoContratoDAOIF.cs" />
+    <Compile Include="modelo\TipoCorridaDAO.cs" />
+    <Compile Include="modelo\TipoCorridaDAOIF.cs" />
+    <Compile Include="modelo\TipoDeRedondeoDAO.cs" />
+    <Compile Include="modelo\TipoDeRedondeoDAOIF.cs" />
+    <Compile Include="modelo\TipoElementoDAO.cs" />
+    <Compile Include="modelo\TipoElementoDAOIF.cs" />
+    <Compile Include="modelo\TipoHerramientaDAO.cs" />
+    <Compile Include="modelo\TipoHerramientaDAOIF.cs" />
+    <Compile Include="modelo\TipoNominaDAO.cs" />
+    <Compile Include="modelo\TipoNominaDAOIF.cs" />
+    <Compile Include="modelo\TiposDeCambioDAO.cs" />
+    <Compile Include="modelo\TiposDeCambioDAOIF.cs" />
+    <Compile Include="modelo\TiposVacacionesDAO.cs" />
+    <Compile Include="modelo\TiposVacacionesDAOIF.cs" />
+    <Compile Include="modelo\TipoTablaDAO.cs" />
+    <Compile Include="modelo\TipoTablaDAOIF.cs" />
+    <Compile Include="modelo\TurnosDAO.cs" />
+    <Compile Include="modelo\TurnosDAOIF.cs" />
+    <Compile Include="modelo\UsuarioDAO.cs" />
+    <Compile Include="modelo\UsuarioDAOIF.cs" />
+    <Compile Include="modelo\VacacionesAplicacionDAO.cs" />
+    <Compile Include="modelo\VacacionesAplicacionDAOIF.cs" />
+    <Compile Include="modelo\VacacionesDevengadasDAO.cs" />
+    <Compile Include="modelo\VacacionesDevengadasDAOIF.cs" />
+    <Compile Include="modelo\VacacionesDisfrutadasDAO.cs" />
+    <Compile Include="modelo\VacacionesDisfrutadasDAOIF.cs" />
+    <Compile Include="modelo\VentanaDAO.cs" />
+    <Compile Include="modelo\VentanaDAOIF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servicios\extras\ConectorQuerysGenericos.cs" />
+    <Compile Include="servicios\extras\ConnectionDB.cs" />
+    <Compile Include="servicios\extras\DataBase.cs" />
+    <Compile Include="servicios\extras\EntityBaseRepository.cs" />
+    <Compile Include="servicios\extras\EntityFrameworkCxn.cs" />
+    <Compile Include="servicios\extras\IEntityBase.cs" />
+    <Compile Include="servicios\extras\IEntityBaseRepository.cs" />
+    <Compile Include="servicios\extras\KeyConnection.cs" />
+    <Compile Include="servicios\extras\NHibernateCxn.cs" />
+    <Compile Include="servicios\extras\TypeDB.cs" />
+    <Compile Include="servicios\Initializers\ServicioBaseDatos.cs" />
+    <Compile Include="util\CamposAMostrar.cs" />
+    <Compile Include="util\Casting.cs" />
+    <Compile Include="util\ConfigMascaras2.Designer.cs" />
+    <Compile Include="util\ConstructorDatosATimbrar.cs" />
+    <Compile Include="util\ConstruyeQueries.cs" />
+    <Compile Include="util\ControlErroresEntity.cs" />
+    <Compile Include="util\DBContextAdapter.cs" />
+    <Compile Include="util\GeneradorClave.cs" />
+    <Compile Include="util\opensslkey.cs" />
+    <Compile Include="util\SelloDigital.cs" />
+    <Compile Include="util\SerializationHelper.cs" />
+    <Compile Include="util\SqlWhereInParameters.cs" />
+    <Compile Include="util\StringWriterWithEncoding.cs" />
+    <Compile Include="util\Utilerias.cs" />
+    <Compile Include="util\UtileriasSat.cs" />
+    <Compile Include="util\UtilidadesXML.cs" />
+    <Compile Include="util\validadorParametros.cs" />
+    <Compile Include="Web References\WebConsultarSat\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsSolocionFactibleTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsSolucionfactibleCancelar\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsSolucionfactible\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exitosw.Payroll.Entity\Exitosw.Payroll.Entity.csproj">
+      <Project>{666e3437-343f-441e-8179-ccb1190afb65}</Project>
+      <Name>Exitosw.Payroll.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exitosw.Payroll.Hibernate\Exitosw.Payroll.Hibernate.csproj">
+      <Project>{f31bd9da-195f-4fa0-9f2c-de9bfbdc1229}</Project>
+      <Name>Exitosw.Payroll.Hibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exitosw.Payroll.TestCompilador\Exitosw.Payroll.TestCompilador.csproj">
+      <Project>{87563fa1-18ee-493c-9d3c-1b72adeb312b}</Project>
+      <Name>Exitosw.Payroll.TestCompilador</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Localization\ar.xml" />
+    <Content Include="Localization\be.xml" />
+    <Content Include="Localization\bg.xml" />
+    <Content Include="Localization\bh.xml" />
+    <Content Include="Localization\ca-ES.xml" />
+    <Content Include="Localization\cs.xml" />
+    <Content Include="Localization\de.xml" />
+    <Content Include="Localization\el-GR.xml" />
+    <Content Include="Localization\en-GB.xml" />
+    <Content Include="Localization\en.xml" />
+    <Content Include="Localization\es.xml" />
+    <Content Include="Localization\eu-ES.xml" />
+    <Content Include="Localization\fa.xml" />
+    <Content Include="Localization\fr.xml" />
+    <Content Include="Localization\gl-ES.xml" />
+    <Content Include="Localization\hr.xml" />
+    <Content Include="Localization\hu.xml" />
+    <Content Include="Localization\id.xml" />
+    <Content Include="Localization\it.xml" />
+    <Content Include="Localization\ja.xml" />
+    <Content Include="Localization\ka.xml" />
+    <Content Include="Localization\ko.xml" />
+    <Content Include="Localization\lt.xml" />
+    <Content Include="Localization\nb-NO.xml" />
+    <Content Include="Localization\nl.xml" />
+    <Content Include="Localization\pl.xml" />
+    <Content Include="Localization\pt-BR.xml" />
+    <Content Include="Localization\pt.xml" />
+    <Content Include="Localization\ro.xml" />
+    <Content Include="Localization\ru.xml" />
+    <Content Include="Localization\sk.xml" />
+    <Content Include="Localization\sr.xml" />
+    <Content Include="Localization\sv.xml" />
+    <Content Include="Localization\tr.xml" />
+    <Content Include="Localization\uk.xml" />
+    <Content Include="Localization\vi.xml" />
+    <Content Include="Localization\zh-CHS.xml" />
+    <Content Include="Localization\zh-CHT.xml" />
+    <Content Include="recursos\xsltLocal\AcreditamientoIEPS10.xslt" />
+    <Content Include="recursos\xsltLocal\aerolineas.xslt" />
+    <Content Include="recursos\xsltLocal\cadenaoriginal_3_3.xslt" />
+    <Content Include="recursos\xsltLocal\certificadodedestruccion.xslt" />
+    <Content Include="recursos\xsltLocal\cfdiregistrofiscal.xslt" />
+    <Content Include="recursos\xsltLocal\ComercioExterior10.xslt" />
+    <Content Include="recursos\xsltLocal\ComercioExterior11.xslt" />
+    <Content Include="recursos\xsltLocal\consumodecombustibles.xslt" />
+    <Content Include="recursos\xsltLocal\detallista.xslt" />
+    <Content Include="recursos\xsltLocal\divisas.xslt" />
+    <Content Include="recursos\xsltLocal\donat11.xslt" />
+    <Content Include="recursos\xsltLocal\ecb.xslt" />
+    <Content Include="recursos\xsltLocal\ecc.xslt" />
+    <Content Include="recursos\xsltLocal\ecc11.xslt" />
+    <Content Include="recursos\xsltLocal\iedu.xslt" />
+    <Content Include="recursos\xsltLocal\implocal.xslt" />
+    <Content Include="recursos\xsltLocal\ine10.xslt" />
+    <Content Include="recursos\xsltLocal\ine11.xslt" />
+    <Content Include="recursos\xsltLocal\leyendasFisc.xslt" />
+    <Content Include="recursos\xsltLocal\nomina11.xslt" />
+    <Content Include="recursos\xsltLocal\nomina12.xslt" />
+    <Content Include="recursos\xsltLocal\notariospublicos.xslt" />
+    <Content Include="recursos\xsltLocal\obrasarteantiguedades.xslt" />
+    <Content Include="recursos\xsltLocal\pagoenespecie.xslt" />
+    <Content Include="recursos\xsltLocal\Pagos10.xslt" />
+    <Content Include="recursos\xsltLocal\pfic.xslt" />
+    <Content Include="recursos\xsltLocal\psgecfd.xslt" />
+    <Content Include="recursos\xsltLocal\renovacionysustitucionvehiculos.xslt" />
+    <Content Include="recursos\xsltLocal\servicioparcialconstruccion.xslt" />
+    <Content Include="recursos\xsltLocal\spei.xslt" />
+    <Content Include="recursos\xsltLocal\terceros11.xslt" />
+    <Content Include="recursos\xsltLocal\TuristaPasajeroExtranjero.xslt" />
+    <Content Include="recursos\xsltLocal\utilerias.xslt" />
+    <Content Include="recursos\xsltLocal\valesdedespensa.xslt" />
+    <Content Include="recursos\xsltLocal\vehiculousado.xslt" />
+    <Content Include="recursos\xsltLocal\ventavehiculos11.xslt" />
+    <Content Include="util\ConfigMascaras.properties" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="recursos\xsltLocal\cadenaoriginal_3_3.xslt~" />
+    <EmbeddedResource Include="Reports\Report.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAsimilados.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAcuse.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Web References\WebConsultarSat\Acuse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebConsultarSat\ConsultaCFDIService.wsdl" />
+    <None Include="Web References\WebConsultarSat\ConsultaCFDIService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebConsultarSat\ConsultaCFDIService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebConsultarSat\ConsultaCFDIService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebConsultarSat\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsSolocionFactibleTest\CFDICancelacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolocionFactibleTest\CFDICertificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolocionFactibleTest\CFDIResultadoCertificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolocionFactibleTest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsSolocionFactibleTest\Timbrado.wsdl" />
+    <None Include="Web References\WsSolucionfactibleCancelar\Cancelacion.wsdl" />
+    <None Include="Web References\WsSolucionfactibleCancelar\CancelacionAsincronoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolucionfactibleCancelar\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsSolucionfactibleCancelar\StatusCancelacionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolucionfactible\CFDICancelacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolucionfactible\CFDICertificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolucionfactible\CFDIResultadoCertificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsSolucionfactible\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsSolucionfactible\Timbrado.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="util\ConfigMascaras.resx" />
+    <EmbeddedResource Include="util\ConfigMascaras2.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebConsultarSat\</RelPath>
+      <UpdateFromURL>https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Exitosw_Payroll_Core_WebConsultarSat_ConsultaCFDIService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://solucionfactible.com/ws/services/Cancelacion%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsSolucionfactibleCancelar\</RelPath>
+      <UpdateFromURL>https://solucionfactible.com/ws/services/Cancelacion%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Exitosw_Payroll_Core_WsSolucionfactibleCancelar_Cancelacion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://solucionfactible.com/ws/services/Timbrado%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsSolucionfactible\</RelPath>
+      <UpdateFromURL>https://solucionfactible.com/ws/services/Timbrado%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Exitosw_Payroll_Core_WsSolucionfactible_Timbrado</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://testing.solucionfactible.com/ws/services/Timbrado%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsSolocionFactibleTest\</RelPath>
+      <UpdateFromURL>https://testing.solucionfactible.com/ws/services/Timbrado%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Exitosw_Payroll_Core_WsSolocionFactibleTest_Timbrado</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

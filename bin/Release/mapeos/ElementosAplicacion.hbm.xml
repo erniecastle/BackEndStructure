@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ElementosAplicacion" table="ElementosAplicacion" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="assigned" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="entidad" type="String">
+      <column name="entidad" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="ordenId" type="Int32">
+      <column name="ordenId" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="parentId" type="Int32">
+      <column name="parentId" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <bag name="parametros" table="Parametros_ElementosAplicacion"  generic="true">
+      <key not-null="true">
+        <column name="elementosAplicacion_Id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </key>
+      <many-to-many class="Parametros" fetch="join">
+        <column name="Parametros_id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </many-to-many>
+    </bag>
+    <bag name="cruce" inverse="true" generic="true">
+      <key>
+        <column name="elementosAplicacion_ID" />
+      </key>
+      <one-to-many class="Cruce" />
+    </bag>
+  </class>
+</hibernate-mapping>

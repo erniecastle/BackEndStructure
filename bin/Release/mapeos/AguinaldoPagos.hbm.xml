@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="AguinaldoPagos" table="AguinaldoPagos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="aguinaldo" type="Double">
+      <column name="aguinaldo" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasAguinaldos" type="Double">
+      <column name="diasAguinaldos" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasPagados" type="Double">
+      <column name="diasPagados" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="ejercicio" type="Int32">
+      <column name="ejercicio" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="isr" type="Double">
+      <column name="isr" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina" class="PeriodosNomina">
+      <column name="periodosNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina" class="TipoNomina">
+      <column name="tipoNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

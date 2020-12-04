@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Incidencias" table="Incidencias" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="descontar" type="Boolean">
+      <column name="descontar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <bag name="despensa" table="Despensa_Incidencias"  generic="true">
+      <key not-null="true">
+        <column name="incidencias_Id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      </key>
+      <many-to-many class="Despensa" fetch="join">
+        <column name="Despensa_id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

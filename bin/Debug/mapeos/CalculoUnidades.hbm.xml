@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CalculoUnidades" table="CalculoUnidades" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="diasAusentismo" type="Int32">
+      <column name="diasAusentismo" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasDescanso" type="Int32">
+      <column name="diasDescanso" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasDescansoLaborado" type="Double">
+      <column name="diasDescansoLaborado" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasDomingoLaborado" type="Double">
+      <column name="diasDomingoLaborado" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasFalta" type="Double">
+      <column name="diasFalta" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasFestivo" type="Int32">
+      <column name="diasFestivo" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasFestivoLaborado" type="Double">
+      <column name="diasFestivoLaborado" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasIncapacidadAccidente" type="Int32">
+      <column name="diasIncapacidadAccidente" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasIncapacidadEnfermedad" type="Int32">
+      <column name="diasIncapacidadEnfermedad" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasIncapacidadMaternidad" type="Int32">
+      <column name="diasIncapacidadMaternidad" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasOtrasIncapacidades" type="Int32">
+      <column name="diasOtrasIncapacidades" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasPermisoConSueldo" type="Double">
+      <column name="diasPermisoConSueldo" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasPermisoSinSueldo" type="Double">
+      <column name="diasPermisoSinSueldo" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasPrimaVacacional" type="Double">
+      <column name="diasPrimaVacacional" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasRetardo" type="Double">
+      <column name="diasRetardo" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasTrabajados" type="Double">
+      <column name="diasTrabajados" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="diasVacaciones" type="Int32">
+      <column name="diasVacaciones" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="ejercicio" type="Int32">
+      <column name="ejercicio" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="hrsExtraDoble" type="Double">
+      <column name="hrsExtraDoble" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="hrsExtraTriple" type="Double">
+      <column name="hrsExtraTriple" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="mes" type="Int32">
+      <column name="mes" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="numMovParticion" type="Int32">
+      <column name="numMovParticion" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="numero" type="Int32">
+      <column name="numero" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="uso" type="Int32">
+      <column name="uso" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="plazasPorEmpleado" class="PlazasPorEmpleado">
+      <column name="plazasPorEmpleado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoCorrida" class="TipoCorrida">
+      <column name="tipoCorrida_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tipoNomina" class="TipoNomina">
+      <column name="tipoNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="tiposVacaciones" class="TiposVacaciones">
+      <column name="tiposVacaciones_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="periodosNomina" class="PeriodosNomina">
+      <column name="periodosNomina_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

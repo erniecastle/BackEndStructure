@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ReporteFuenteDatos" table="ReporteFuenteDatos" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreEntidad" type="String">
+      <column name="nombreEntidad" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="orden" type="Int32">
+      <column name="orden" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="usaFormulas" type="Boolean">
+      <column name="usaFormulas" not-null="true" sql-type="BIT" />
+    </property>
+    <bag name="parametrosConsulta" inverse="true" generic="true">
+      <key>
+        <column name="reporteFuenteDatos_ID" />
+      </key>
+      <one-to-many class="ParametrosConsulta" />
+    </bag>
+    <bag name="reporteDinamico" inverse="true" generic="true">
+      <key>
+        <column name="reporteFuenteDatos_ID" />
+      </key>
+      <one-to-many class="ReporteDinamico" />
+    </bag>
+  </class>
+</hibernate-mapping>

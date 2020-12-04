@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="RazonesSociales" table="RazonesSociales" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="calle" type="String">
+      <column name="calle" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="certificadoSAT" type="BinaryBlob">
+      <column name="certificadoSAT" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="colonia" type="String">
+      <column name="colonia" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionRecibo" type="String">
+      <column name="descripcionRecibo" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="folio" type="String">
+      <column name="folio" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="llaveSAT" type="BinaryBlob">
+      <column name="llaveSAT" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="numeroex" type="String">
+      <column name="numeroex" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="numeroin" type="String">
+      <column name="numeroin" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="password" type="String">
+      <column name="password" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="razonsocial" type="String">
+      <column name="razonsocial" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="regimenFiscal" type="String">
+      <column name="regimenFiscal" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="representantelegal" type="String">
+      <column name="representantelegal" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="rfc" type="String">
+      <column name="rfc" not-null="true" length="13" sql-type="VARCHAR(13)" />
+    </property>
+    <property name="rutaCert" type="String">
+      <column name="rutaCert" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="rutaLlave" type="String">
+      <column name="rutaLlave" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="telefono" type="String">
+      <column name="telefono" not-null="true" length="20" sql-type="VARCHAR(20)" />
+    </property>
+    <property name="ubicacionXML" type="String">
+      <column name="ubicacionXML" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="ciudades" class="Ciudades">
+      <column name="ciudades_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="configuraTimbrado" class="ConfiguraTimbrado">
+      <column name="configuraTimbrado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="cp" class="Cp">
+      <column name="cp_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="estados" class="Estados">
+      <column name="estados_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="municipios" class="Municipios">
+      <column name="municipios_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="paises" class="Paises">
+      <column name="paises_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="series" class="Series">
+      <column name="series_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="aguinaldoConfiguracion" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="AguinaldoConfiguracion" />
+    </bag>
+    <bag name="aguinaldoFechas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="AguinaldoFechas" />
+    </bag>
+    <bag name="aguinaldoPagos" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="AguinaldoPagos" />
+    </bag>
+    <bag name="asistencias" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Asistencias" />
+    </bag>
+    <bag name="calculoUnidades" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="CalculoUnidades" />
+    </bag>
+    <bag name="centroDeCosto" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="CentroDeCosto" />
+    </bag>
+    <bag name="cfdiEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="CFDIEmpleado" />
+    </bag>
+    <bag name="configAsistencias" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="ConfigAsistencias" />
+    </bag>
+    <bag name="configuraMovimiento" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="ConfiguraMovimiento" />
+    </bag>
+    <bag name="controlVacDeveng" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="ControlVacDeveng" />
+    </bag>
+    <bag name="creditoAhorro" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="CreditoAhorro" />
+    </bag>
+    <bag name="creditoPorEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="CreditoPorEmpleado" />
+    </bag>
+    <bag name="departamentos" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Departamentos" />
+    </bag>
+    <bag name="detalleAsistencia" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="DetalleAsistencia" />
+    </bag>
+    <bag name="diasAguinaldo" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="DiasAguinaldo" />
+    </bag>
+    <bag name="empleados" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Empleados" />
+    </bag>
+    <bag name="finiquitosLiquida" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="FiniquitosLiquida" />
+    </bag>
+    <bag name="firmas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Firmas" />
+    </bag>
+    <bag name="horario" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Horario" />
+    </bag>
+    <bag name="ingresosBajas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="IngresosBajas" />
+    </bag>
+    <bag name="movNomConcep" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="MovNomConcep" />
+    </bag>
+    <bag name="plazas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Plazas" />
+    </bag>
+    <bag name="plazasPorEmpleado" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="PlazasPorEmpleado" />
+    </bag>
+    <bag name="ptuDatosGenerales" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="PtuDatosGenerales" />
+    </bag>
+    <bag name="ptuEmpleados" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="PtuEmpleados" />
+    </bag>
+    <bag name="registroPatronal" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="RegistroPatronal" />
+    </bag>
+    <bag name="tipoCentroCostos" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="TipoCentroCostos" />
+    </bag>
+    <bag name="turnos" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="Turnos" />
+    </bag>
+    <bag name="turnosHorariosFijos" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="TurnosHorariosFijos" />
+    </bag>
+    <bag name="vacacionesDevengadas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="VacacionesDevengadas" />
+    </bag>
+    <bag name="vacacionesDisfrutadas" inverse="true" generic="true">
+      <key>
+        <column name="razonesSociales_ID" />
+      </key>
+      <one-to-many class="VacacionesDisfrutadas" />
+    </bag>
+  </class>
+</hibernate-mapping>

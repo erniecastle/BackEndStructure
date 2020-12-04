@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FiniquitosLiquida" table="FiniquitosLiquida" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="bajaPorRiesgo" type="Boolean">
+      <column name="bajaPorRiesgo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="calculado" type="Boolean">
+      <column name="calculado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="causaBaja" type="Int32">
+      <column name="causaBaja" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="referencia" type="String">
+      <column name="referencia" not-null="true" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="contImpreso" type="Int32">
+      <column name="contImpreso" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="descripcionBaja" type="String">
+      <column name="descripcionBaja" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fechaBaja" type="DateTime">
+      <column name="fechaBaja" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaCalculo" type="DateTime">
+      <column name="fechaCalculo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="modoBaja" type="Int32">
+      <column name="modoBaja" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="observaciones" type="String">
+      <column name="observaciones" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="status" type="Int32">
+      <column name="status" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="tipoBaja" type="Int32">
+      <column name="tipoBaja" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="empleados" class="Empleados">
+      <column name="empleados_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="finiquitosLiquida_finiquitosComplementario_ID" class="FiniquitosLiquida">
+      <column name="finiquitosComplementario_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="finiqLiquidCncNom" inverse="true" generic="true">
+      <key>
+        <column name="finiquitosLiquid_ID" />
+      </key>
+      <one-to-many class="FiniqLiquidCncNom" />
+    </bag>
+    <bag name="finiqLiquidPlazas" inverse="true" generic="true">
+      <key>
+        <column name="finiquitosLiquida_ID" />
+      </key>
+      <one-to-many class="FiniqLiquidPlazas" />
+    </bag>
+    <bag name="finiquitosLiquidas_finiquitosComplementario_ID" inverse="true" generic="true">
+      <key>
+        <column name="finiquitosComplementario_ID" />
+      </key>
+      <one-to-many class="FiniquitosLiquida" />
+    </bag>
+    <bag name="salariosIntegrados" inverse="true" generic="true">
+      <key>
+        <column name="finiquitosLiquidaciones_ID" />
+      </key>
+      <one-to-many class="SalariosIntegrados" />
+    </bag>
+  </class>
+</hibernate-mapping>

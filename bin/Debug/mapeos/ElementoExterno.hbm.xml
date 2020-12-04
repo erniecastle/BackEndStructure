@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ElementoExterno" table="ElementoExterno" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="assigned" />
+    </id>
+    <property name="ubicacion" type="String">
+      <column name="ubicacion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="contenedor" class="Contenedor">
+      <column name="contenedor_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ConfigFoliacion" table="ConfigFoliacion" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="activarFoliacion" type="Boolean">
+      <column name="activarFoliacion" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="activarPrefijo" type="Boolean">
+      <column name="activarPrefijo" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="campoClave" type="String">
+      <column name="campoClave" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="lgnFolio" type="Int32">
+      <column name="lgnFolio" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="lngPrefijo" type="Int32">
+      <column name="lngPrefijo" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="mostrarMsjFolioAjustado" type="Boolean">
+      <column name="mostrarMsjFolioAjustado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="prefijosValidos" type="String">
+      <column name="prefijosValidos" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="saltarFolios" type="Boolean">
+      <column name="saltarFolios" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="tabla" type="String">
+      <column name="tabla" not-null="true" length="50" sql-type="VARCHAR(50)" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Monedas" table="Monedas" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="centimosPlural" type="String">
+      <column name="centimosPlural" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="centimosSingular" type="String">
+      <column name="centimosSingular" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="decimales" type="Int32">
+      <column name="decimales" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="generoCentimos" type="Boolean">
+      <column name="generoCentimos" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="generoMoneda" type="Boolean">
+      <column name="generoMoneda" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="monedaPlural" type="String">
+      <column name="monedaPlural" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="monedaSingular" type="String">
+      <column name="monedaSingular" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="simbolo" type="String">
+      <column name="simbolo" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clave" type="String">
+      <column name="clave" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="identificador" type="String">
+      <column name="identificador" not-null="true" length="15" sql-type="VARCHAR(15)" />
+    </property>
+    <bag name="tiposDeCambio" inverse="true" generic="true">
+      <key>
+        <column name="monedas_ID" />
+      </key>
+      <one-to-many class="TiposDeCambio" />
+    </bag>
+  </class>
+</hibernate-mapping>

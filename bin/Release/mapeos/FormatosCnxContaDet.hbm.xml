@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FormatosCnxContaDet" table="FormatosCnxContaDet" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="adjuntCfdi" type="Int32">
+      <column name="adjuntCfdi" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="agrupacion" type="Int32">
+      <column name="agrupacion" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="conceptoMovto" type="String">
+      <column name="conceptoMovto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="elemento" type="String">
+      <column name="elemento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="factor" type="Double">
+      <column name="factor" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="filtro" type="BinaryBlob">
+      <column name="filtro" not-null="false" length="2147483647" sql-type="IMAGE" />
+    </property>
+    <property name="incluirCC" type="Int32">
+      <column name="incluirCC" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="incluirEnCeros" type="Boolean">
+      <column name="incluirEnCeros" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="modoConcepto" type="Int32">
+      <column name="modoConcepto" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="modoReferencia" type="Int32">
+      <column name="modoReferencia" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="referenciaMovto" type="String">
+      <column name="referenciaMovto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoMovto" type="Int32">
+      <column name="tipoMovto" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="valor" type="String">
+      <column name="valor" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <many-to-one name="cuentasContables" class="CuentasContables">
+      <column name="cuentasContables_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="datosDisponiblesCxnConta" class="DatosDisponiblesCxnConta">
+      <column name="datosDisponiblesCxnConta_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="formatoCnxConta" class="FormatoCnxConta">
+      <column name="formatoCnxConta_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

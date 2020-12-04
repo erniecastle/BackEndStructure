@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Resultado" table="Resultado" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="IMSS" type="String">
+      <column name="IMSS" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="RFCBanco" type="String">
+      <column name="RFCBanco" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="RFCRazonSocial" type="String">
+      <column name="RFCRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="apellidoMaterno" type="String">
+      <column name="apellidoMaterno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="apellidoPaterno" type="String">
+      <column name="apellidoPaterno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="calleRazonSocial" type="String">
+      <column name="calleRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveBanco" type="String">
+      <column name="claveBanco" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveCentroDeCosto" type="String">
+      <column name="claveCentroDeCosto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveDepartamento" type="String">
+      <column name="claveDepartamento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveEmpleado" type="String">
+      <column name="claveEmpleado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavePeriodosNomina" type="String">
+      <column name="clavePeriodosNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="clavePuesto" type="String">
+      <column name="clavePuesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveRegistrotPatronal" type="String">
+      <column name="claveRegistrotPatronal" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveTipoContrato" type="String">
+      <column name="claveTipoContrato" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveTipoNomina" type="String">
+      <column name="claveTipoNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="claveTurno" type="String">
+      <column name="claveTurno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="colonia" type="String">
+      <column name="colonia" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="coloniaRazonSocial" type="String">
+      <column name="coloniaRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="condicionConcepto" type="String">
+      <column name="condicionConcepto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="cp" type="String">
+      <column name="cp" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="cpRazonSocial" type="String">
+      <column name="cpRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="cuentaBancaria" type="String">
+      <column name="cuentaBancaria" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="curp" type="String">
+      <column name="curp" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionAbreviadaConceptoNomina" type="String">
+      <column name="descripcionAbreviadaConceptoNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionBanco" type="String">
+      <column name="descripcionBanco" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionCentroDeCosto" type="String">
+      <column name="descripcionCentroDeCosto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionConceptoNomina" type="String">
+      <column name="descripcionConceptoNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionDepartamento" type="String">
+      <column name="descripcionDepartamento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionPreviaCentroDeCosto" type="String">
+      <column name="descripcionPreviaCentroDeCosto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionPreviaPuesto" type="String">
+      <column name="descripcionPreviaPuesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionPuesto" type="String">
+      <column name="descripcionPuesto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionTipoContrato" type="String">
+      <column name="descripcionTipoContrato" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="descripcionTurno" type="String">
+      <column name="descripcionTurno" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="diasIMSS" type="Int32">
+      <column name="diasIMSS" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="diasPago" type="Int32">
+      <column name="diasPago" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="domicilio" type="String">
+      <column name="domicilio" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="fechaCierre" type="DateTime">
+      <column name="fechaCierre" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaCierrePeriodo" type="DateTime">
+      <column name="fechaCierrePeriodo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaFinalPeriodo" type="DateTime">
+      <column name="fechaFinalPeriodo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaIMSS" type="DateTime">
+      <column name="fechaIMSS" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaIngreso" type="DateTime">
+      <column name="fechaIngreso" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaInicial" type="DateTime">
+      <column name="fechaInicial" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="fechaInicialPeriodo" type="DateTime">
+      <column name="fechaInicialPeriodo" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="formaDePago" type="String">
+      <column name="formaDePago" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="formulaConcepto" type="String">
+      <column name="formulaConcepto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="horas" type="Int32">
+      <column name="horas" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="importe" type="Double">
+      <column name="importe" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="importePlazaPorEmplMov" type="Double">
+      <column name="importePlazaPorEmplMov" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="indicativoGravadoExento" type="String">
+      <column name="indicativoGravadoExento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="naturaleza" type="Int32">
+      <column name="naturaleza" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreAbreviado" type="String">
+      <column name="nombreAbreviado" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombrePeriodosNomina" type="String">
+      <column name="nombrePeriodosNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreRegistrotPatronal" type="String">
+      <column name="nombreRegistrotPatronal" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="nombreTipoNomina" type="String">
+      <column name="nombreTipoNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroConceptoNomina" type="String">
+      <column name="numeroConceptoNomina" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroExRazonSocial" type="String">
+      <column name="numeroExRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroExt" type="String">
+      <column name="numeroExt" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroInRazonSocial" type="String">
+      <column name="numeroInRazonSocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="numeroInt" type="String">
+      <column name="numeroInt" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="plazas" type="String">
+      <column name="plazas" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="razonsocial" type="String">
+      <column name="razonsocial" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="registroPatronal" type="String">
+      <column name="registroPatronal" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="rfc" type="String">
+      <column name="rfc" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="salarioDiario" type="Double">
+      <column name="salarioDiario" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="salarioDiarioIntegrado" type="Double">
+      <column name="salarioDiarioIntegrado" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="salarioPor" type="Int32">
+      <column name="salarioPor" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <property name="sindicalizado" type="Boolean">
+      <column name="sindicalizado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="subCuentaConcepto" type="String">
+      <column name="subCuentaConcepto" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="subCuentaDepartamento" type="String">
+      <column name="subCuentaDepartamento" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="telefono" type="String">
+      <column name="telefono" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="tipoRelacionLaboral" type="Int32">
+      <column name="tipoRelacionLaboral" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+  </class>
+</hibernate-mapping>

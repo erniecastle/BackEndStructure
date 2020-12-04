@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Permisos" table="Permisos" >
+    <id name="id" type="Int32">
+      <column name="Id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="identity" />
+    </id>
+    <property name="consultar" type="Boolean">
+      <column name="consultar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="eliminar" type="Boolean">
+      <column name="eliminar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="imprimir" type="Boolean">
+      <column name="imprimir" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="insertar" type="Boolean">
+      <column name="insertar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="modificar" type="Boolean">
+      <column name="modificar" not-null="true" sql-type="BIT" />
+    </property>
+    <many-to-one name="contenedor" class="Contenedor">
+      <column name="contenedor_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="perfiles" class="Perfiles">
+      <column name="perfil_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="ventana" class="Ventana">
+      <column name="ventana_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <many-to-one name="usuario" class="Usuario">
+      <column name="usuario_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

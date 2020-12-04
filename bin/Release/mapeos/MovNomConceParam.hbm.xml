@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="MovNomConceParam" table="MovNomConceParam" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="valor" type="String">
+      <column name="valor" not-null="false" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="movNomConcep" class="MovNomConcep">
+      <column name="movNomConcep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="paraConcepDeNom" class="ParaConcepDeNom">
+      <column name="paraConcepDeNom_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

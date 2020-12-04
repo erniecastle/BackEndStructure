@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Horario" table="Horario" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="clave" type="String">
+      <column name="clave" not-null="false" length="30" sql-type="VARCHAR(30)" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="horaEntrada" type="DateTime">
+      <column name="horaEntrada" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaFinal1erCoffeBreak" type="DateTime">
+      <column name="horaFinal1erCoffeBreak" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaFinal2doCoffeBreak" type="DateTime">
+      <column name="horaFinal2doCoffeBreak" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaFinalComer" type="DateTime">
+      <column name="horaFinalComer" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaInicio1erCoffeBreak" type="DateTime">
+      <column name="horaInicio1erCoffeBreak" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaInicio2doCoffeBreak" type="DateTime">
+      <column name="horaInicio2doCoffeBreak" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaInicioComer" type="DateTime">
+      <column name="horaInicioComer" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaInicioHrsExtra" type="DateTime">
+      <column name="horaInicioHrsExtra" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="horaSalida" type="DateTime">
+      <column name="horaSalida" not-null="false" sql-type="DATETIME" />
+    </property>
+    <property name="tiempo1erCoffeBreak" type="Double">
+      <column name="tiempo1erCoffeBreak" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tiempo2doCoffeBreak" type="Double">
+      <column name="tiempo2doCoffeBreak" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="tiempoComer" type="Double">
+      <column name="tiempoComer" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="topeDiarioHrsExtras" type="Double">
+      <column name="topeDiarioHrsExtras" not-null="false" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="razonesSociales" class="RazonesSociales">
+      <column name="razonesSociales_ID" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="turnosHorariosFijos" inverse="true" generic="true">
+      <key>
+        <column name="Horario_ID" />
+      </key>
+      <one-to-many class="TurnosHorariosFijos" />
+    </bag>
+  </class>
+</hibernate-mapping>

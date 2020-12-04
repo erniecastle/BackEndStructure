@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ReporteOrdenGrupo" table="ReporteOrdenGrupo" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="agrupar" type="Boolean">
+      <column name="agrupar" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="incluirEncabezado" type="Boolean">
+      <column name="incluirEncabezado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="incluirPie" type="Boolean">
+      <column name="incluirPie" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="orden" type="Int32">
+      <column name="orden" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </property>
+    <many-to-one name="datosConsulta" class="DatosConsulta">
+      <column name="datosConsulta_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteDinamico" class="ReporteDinamico">
+      <column name="reporteDinamico_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteEstilos_reporteEstiloEncabezado_ID" class="ReporteEstilos">
+      <column name="reporteEstiloEncabezado_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteEstilos_reporteEstiloGrupo_ID" class="ReporteEstilos">
+      <column name="reporteEstiloGrupo_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="reporteEstilos_reporteEstiloPie_ID" class="ReporteEstilos">
+      <column name="reporteEstiloPie_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <bag name="reporteOpcionGrupos" inverse="true" generic="true">
+      <key>
+        <column name="reporteOrdenGrupo_ID" />
+      </key>
+      <one-to-many class="ReporteOpcionGrupos" />
+    </bag>
+  </class>
+</hibernate-mapping>

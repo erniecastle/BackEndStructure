@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CalculoIMSSPatron" table="CalculoIMSSPatron" >
+    <id name="id" type="Decimal">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="NUMERIC(19)" />
+      <generator class="identity" />
+    </id>
+    <property name="valorTasaAportacionInfonavitPatron" type="Double">
+      <column name="valorTasaAportacionInfonavitPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaAportacionRetiroPatron" type="Double">
+      <column name="valorTasaAportacionRetiroPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaCesanVejezPatron" type="Double">
+      <column name="valorTasaCesanVejezPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaExcedentePatron" type="Double">
+      <column name="valorTasaExcedentePatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaFijaPatron" type="Double">
+      <column name="valorTasaFijaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaGastosPensPatron" type="Double">
+      <column name="valorTasaGastosPensPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaGuarderiaPatron" type="Double">
+      <column name="valorTasaGuarderiaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaInvaliVidaPatron" type="Double">
+      <column name="valorTasaInvaliVidaPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaPrestDinePatron" type="Double">
+      <column name="valorTasaPrestDinePatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <property name="valorTasaRiesgosPatron" type="Double">
+      <column name="valorTasaRiesgosPatron" not-null="true" precision="53" sql-type="FLOAT" />
+    </property>
+    <many-to-one name="configuracionIMSS" class="ConfiguracionIMSS">
+      <column name="configuracionIMSS_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+    <many-to-one name="movNomConcep" class="MovNomConcep">
+      <column name="movNomConcep_ID" not-null="false" precision="19" scale="0" sql-type="NUMERIC(19)" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="Exitosw.Payroll.Hibernate" namespace="Exitosw.Payroll.Hibernate.entidad" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Herramienta" table="Herramienta" >
+    <id name="id" type="Int32">
+      <column name="id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      <generator class="assigned" />
+    </id>
+    <property name="habilitado" type="Boolean">
+      <column name="habilitado" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="nombre" type="String">
+      <column name="nombre" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <property name="visible" type="Boolean">
+      <column name="visible" not-null="true" sql-type="BIT" />
+    </property>
+    <property name="descripcion" type="String">
+      <column name="descripcion" not-null="true" length="255" sql-type="VARCHAR(255)" />
+    </property>
+    <many-to-one name="tipoHerramienta" class="TipoHerramienta">
+      <column name="tipoHerramienta_ID" not-null="false" precision="10" scale="0" sql-type="INT" />
+    </many-to-one>
+    <bag name="ventana" table="Ventana_Herramienta"  generic="true">
+      <key not-null="true">
+        <column name="Herramientas_Id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      </key>
+      <many-to-many class="Ventana" fetch="join">
+        <column name="Ventana_id" not-null="true" precision="10" scale="0" sql-type="INT" />
+      </many-to-many>
+    </bag>
+    <bag name="contenedor" inverse="true" generic="true">
+      <key>
+        <column name="herramienta_ID" />
+      </key>
+      <one-to-many class="Contenedor" />
+    </bag>
+    <bag name="externoPersonalizado" inverse="true" generic="true">
+      <key>
+        <column name="herramienta_ID" />
+      </key>
+      <one-to-many class="ExternoPersonalizado" />
+    </bag>
+  </class>
+</hibernate-mapping>
